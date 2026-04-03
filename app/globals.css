@@ -1,26 +1,94 @@
 @import "tailwindcss";
 
+@theme {
+  --color-primary: #C0182A;
+  --color-accent: #D4A853;
+  --color-bg: #FFFFFF;
+  --color-bg-soft: #FBF7F2;
+  --color-surface: #F5E6E6;
+  --color-cream: #FDF8F2;
+  --color-rose: #F2D4D4;
+  --color-text: #1A0808;
+  --color-muted: #6B5E59;
+
+  --font-display: var(--font-playfair);
+  --font-serif: var(--font-cormorant);
+  --font-sans: var(--font-dm-sans);
+  --font-accent: var(--font-dancing);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: var(--color-bg);
+  --foreground: var(--color-text);
+  --card: #FFFFFF;
+  --card-foreground: var(--color-text);
+  --popover: #FFFFFF;
+  --popover-foreground: var(--color-text);
+  --border: #E2E2E2;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+}
+
+.font-dancing {
+  font-family: var(--font-accent);
+}
+
+.font-cormorant {
+  font-family: var(--font-serif);
+}
+
+/* Custom Utilities */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.glow-red {
+  box-shadow: 0 0 30px rgba(192, 24, 42, 0.15);
+}
+
+.glow-gold {
+  box-shadow: 0 0 20px rgba(212, 168, 83, 0.15);
+}
+
+@layer base {
+  * {
+    border-color: rgba(0, 0, 0, 0.05);
+  }
+}
+
+
+html {
+  overflow-y: auto;
+}
+
+html, body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  height: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }
