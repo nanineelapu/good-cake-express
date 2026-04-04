@@ -28,7 +28,7 @@ export default function ReviewsPage() {
    const prev = () => setIndex((prev) => (prev - 1 + reviewsData.length) % reviewsData.length);
 
    return (
-      <div className="min-h-screen bg-white text-text pt-24 lg:pt-40 pb-40 overflow-hidden relative">
+      <div className="min-h-screen bg-white text-text pt-24 lg:pt-40 pb-20 md:pb-40 relative">
 
          {/* SECTION 1: THE STRUCTURAL HERO */}
          <section className="relative min-h-[70vh] flex items-center pt-24 overflow-hidden border-b border-black/5">

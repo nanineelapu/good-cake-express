@@ -26,7 +26,7 @@ export default function OrderPage() {
    };
 
    return (
-      <div className="min-h-screen bg-white text-text pt-24 lg:pt-40 pb-20 md:pb-40 overflow-hidden relative">
+      <div className="min-h-screen bg-white text-text pt-24 lg:pt-40 pb-20 md:pb-40 relative">
 
          {/* BACKGROUND DECOR (Kinetic) - Hidden on mobile for cleaner UI */}
          <div className="fixed inset-0 pointer-events-none opacity-[0.02] select-none hidden md:block">

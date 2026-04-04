@@ -31,7 +31,7 @@ export default function GalleryPage() {
     : galleryItems.filter(item => item.category === activeCategory);
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-white text-text pt-24 lg:pt-40 pb-40 overflow-hidden relative">
+    <div ref={containerRef} className="min-h-screen bg-white text-text pt-24 lg:pt-40 pb-40 relative">
 
       {/* KINETIC WATERMARKS (Complicated Layering) */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">

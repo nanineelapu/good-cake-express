@@ -70,15 +70,14 @@ h1, h2, h3, h4, h5, h6 {
 
 
 html {
-  overflow-y: auto;
+  scroll-behavior: auto !important;
 }
 
-html, body {
+html.lenis, html.lenis body {
   height: auto;
 }
 
 .lenis.lenis-smooth {
-  height: auto;
   scroll-behavior: auto !important;
 }
 
@@ -136,6 +135,7 @@ html, body {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     overflow-x: hidden;
+    touch-action: pan-y;
     /* Prevent text flickering during scroll/animation */
     -webkit-font-smoothing: antialiased;
   }
