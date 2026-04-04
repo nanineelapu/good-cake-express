@@ -60,7 +60,7 @@ export default function OrderPage() {
                            className="flex flex-col gap-6 md:gap-10"
                         >
                            {/* Segment 01: Identity */}
-                           <div className="flex flex-col gap-5 md:gap-8 p-5 md:p-10 bg-[#F9F9F9] border border-black/5 rounded-[2rem] md:rounded-[3rem]">
+                           <div className="flex flex-col gap-5 md:gap-8 p-5 md:p-10 bg-[#F9F9F9] border border-black/5 rounded-4xl md:rounded-[3rem]">
                               <span className="text-[9px] md:text-[10px] font-mono font-black uppercase tracking-widest text-text/20">Segment_01 // Identity</span>
                               <div className="grid md:grid-cols-2 gap-5 md:gap-6">
                                  <div className="flex flex-col gap-2.5">
@@ -95,7 +95,7 @@ export default function OrderPage() {
                            </div>
 
                            {/* Segment 02: Unit Spec */}
-                           <div className="flex flex-col gap-5 md:gap-8 p-5 md:p-10 bg-[#F9F9F9] border border-black/5 rounded-[2rem] md:rounded-[3rem]">
+                           <div className="flex flex-col gap-5 md:gap-8 p-5 md:p-10 bg-[#F9F9F9] border border-black/5 rounded-4xl md:rounded-[3rem]">
                               <span className="text-[9px] md:text-[10px] font-mono font-black uppercase tracking-widest text-text/20">Segment_02 // Unit Selection</span>
                               <div className="grid md:grid-cols-2 gap-5 md:gap-6">
                                  <div className="flex flex-col gap-2.5">
@@ -128,7 +128,7 @@ export default function OrderPage() {
                            </div>
 
                            {/* Segment 03: Temporal */}
-                           <div className="flex flex-col gap-5 md:gap-8 p-5 md:p-10 bg-[#F9F9F9] border border-black/5 rounded-[2rem] md:rounded-[3rem]">
+                           <div className="flex flex-col gap-5 md:gap-8 p-5 md:p-10 bg-[#F9F9F9] border border-black/5 rounded-4xl md:rounded-[3rem]">
                               <span className="text-[9px] md:text-[10px] font-mono font-black uppercase tracking-widest text-text/20">Segment_03 // Temporal Data</span>
                               <div className="grid md:grid-cols-2 gap-5 md:gap-6">
                                  <div className="flex flex-col gap-2.5">

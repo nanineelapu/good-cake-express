@@ -75,9 +75,9 @@ export default function Navbar() {
                 times: [0, 0.5, 1],
                 delay: 0.3
               }}
-              className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-cream shadow-lg group-hover:scale-110 transition-transform"
+              className="w-10 h-10 bg-black/90 border border-white/10 rounded-full flex items-center justify-center text-primary shadow-lg group-hover:scale-110 transition-transform"
             >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-6 h-6">
                 <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
                 <polyline points="7.5 4.21 12 6.81 16.5 4.21" />
                 <polyline points="7.5 19.79 7.5 14.6 3 12" />

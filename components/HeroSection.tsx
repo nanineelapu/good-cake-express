@@ -45,14 +45,32 @@ export default function HeroSection() {
 
       {/* Intro Loading Sequence */}
       {!isLoaded && (
-        <div className="fixed inset-0 z-100 bg-black flex flex-col items-center justify-center gap-4">
-          <motion.div 
-            initial={{ width: 0 }}
-            animate={{ width: 200 }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
-            className="h-px bg-primary"
-          />
-          <span className="text-[10px] uppercase tracking-[0.4em] font-bold text-primary animate-pulse">Baking Perfection...</span>
+        <div className="fixed inset-0 z-100 bg-black flex flex-col items-center justify-center gap-8">
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="w-20 h-20 bg-black border border-white/10 rounded-full flex items-center justify-center text-primary shadow-[0_0_50px_rgba(192,24,42,0.2)]"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-10 h-10">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+              <polyline points="7.5 4.21 12 6.81 16.5 4.21" />
+              <polyline points="7.5 19.79 7.5 14.6 3 12" />
+              <polyline points="21 12 16.5 14.6 16.5 19.79" />
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+              <line x1="12" y1="22.08" x2="12" y2="12" />
+            </svg>
+          </motion.div>
+          
+          <div className="flex flex-col items-center gap-4">
+            <motion.div 
+              initial={{ width: 0 }}
+              animate={{ width: 200 }}
+              transition={{ duration: 1.5, ease: "easeInOut" }}
+              className="h-px bg-primary shadow-[0_0_10px_rgba(192,24,42,0.5)]"
+            />
+            <span className="text-[10px] uppercase tracking-[0.4em] font-bold text-primary animate-pulse">Baking Perfection...</span>
+          </div>
         </div>
       )}
 
