@@ -47,7 +47,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-[100] bg-transparent py-5">
+    <nav className="fixed top-0 left-0 w-full z-100 bg-transparent py-5">
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* Logo Pod with Original Detailed Style */}
         <motion.div
@@ -131,10 +131,10 @@ export default function Navbar() {
         </motion.div>
 
         <button
-          className="md:hidden text-white p-2"
+          className="md:hidden text-white p-3 bg-black/60 backdrop-blur-xl rounded-full border border-white/10 shadow-2xl flex items-center justify-center hover:bg-black/80 transition-all active:scale-95"
           onClick={() => setIsOpen(!isOpen)}
         >
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 

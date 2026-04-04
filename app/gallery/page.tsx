@@ -35,27 +35,27 @@ export default function GalleryPage() {
     <div ref={containerRef} className="min-h-screen bg-white text-text pb-40 overflow-hidden relative">
 
       {/* KINETIC WATERMARKS (Complicated Layering) */}
-      <div className="fixed inset-0 pointer-events-none z-0">
-        <motion.div style={{ y: y1 }} className="absolute -left-20 top-20 text-[25vw] font-display font-black text-black/2 leading-none uppercase italic vertical-text select-none">
+      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <motion.div style={{ y: y1 }} className="absolute -left-10 md:-left-20 top-20 text-[15vw] md:text-[25vw] font-display font-black text-black/2 leading-none uppercase italic vertical-text select-none opacity-5 md:opacity-100">
           ARCHIVE
         </motion.div>
-        <motion.div style={{ y: y2 }} className="absolute -right-20 bottom-20 text-[25vw] font-display font-black text-black/2 leading-none uppercase select-none">
+        <motion.div style={{ y: y2 }} className="absolute -right-10 md:-right-20 bottom-20 text-[15vw] md:text-[25vw] font-display font-black text-black/2 leading-none uppercase select-none opacity-5 md:opacity-100">
           VERIFIED
         </motion.div>
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
-          style={{ backgroundImage: `radial-gradient(circle at 1px 1px, black 1px, transparent 0)`, backgroundSize: '40px 40px' }} />
+        <div className="absolute inset-0 opacity-[0.02]"
+          style={{ backgroundImage: `radial-gradient(circle at 1px 1px, black 1px, transparent 0)`, backgroundSize: '30px 30px' }} />
       </div>
 
       <main className="container mx-auto px-6 relative z-10 pt-32">
 
         {/* HEADER: Complex Split Header */}
-        <div className="grid lg:grid-cols-12 gap-10 mb-32 items-end">
+        <div className="grid lg:grid-cols-12 gap-8 md:gap-10 mb-16 md:mb-32 items-end">
           <div className="lg:col-span-8">
-            <div className="flex items-center gap-4 mb-8">
-              <div className="h-px w-20 bg-primary" />
-              <span className="text-[10px] font-mono font-black text-text/30 uppercase tracking-[0.5em]">The Visual Database // 2.0.4</span>
+            <div className="flex items-center gap-4 mb-6 md:mb-8">
+              <div className="h-px w-16 md:w-20 bg-primary" />
+              <span className="text-[9px] md:text-[10px] font-mono font-black text-text/30 uppercase tracking-[0.5em]">The Visual Database // 2.0.4</span>
             </div>
-            <h1 className="text-7xl md:text-[10vw] font-display font-black leading-[0.8] tracking-tighter uppercase italic">
+            <h1 className="text-5xl md:text-[10vw] font-display font-black leading-[0.8] tracking-tighter uppercase italic">
               GALLERY <br /> <span className="text-primary not-italic">REVEALS.</span>
             </h1>
           </div>
@@ -81,13 +81,13 @@ export default function GalleryPage() {
         </div>
 
         {/* CATEGORY SELECTOR (Kinetic Bubbles) */}
-        <div className="flex flex-wrap items-center gap-3 mb-20 bg-white/50 backdrop-blur-md p-4 rounded-full border border-black/5 sticky top-32 z-50 w-fit max-w-full">
+        <div className="flex flex-wrap items-center gap-2 md:gap-3 mb-12 md:mb-20 bg-white/60 backdrop-blur-xl p-3 md:p-4 rounded-4xl md:rounded-full border border-black/5 sticky top-24 md:top-32 z-50 w-full md:w-fit overflow-x-auto scrollbar-none">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-8 py-3 rounded-full text-[10px] font-mono font-black uppercase tracking-widest transition-all ${activeCategory === cat
-                ? 'bg-black text-white shadow-2xl scale-105'
+              className={`px-6 md:px-8 py-2 md:py-3 rounded-full text-[9px] md:text-[10px] font-mono font-black uppercase tracking-widest transition-all whitespace-nowrap ${activeCategory === cat
+                ? 'bg-black text-white shadow-xl scale-105'
                 : 'text-text/30 hover:text-text'
                 }`}
             >
@@ -97,7 +97,7 @@ export default function GalleryPage() {
         </div>
 
         {/* THE COMPLEX GRID: Staggered Bento-scattering */}
-        <div className="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-12 gap-8 auto-rows-[180px]">
+        <div className="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-12 gap-6 md:gap-8 auto-rows-[250px] md:auto-rows-[180px]">
           <AnimatePresence mode='popLayout'>
             {filteredItems.map((item, idx) => (
               <motion.div
@@ -113,28 +113,28 @@ export default function GalleryPage() {
                 <motion.img
                   src={item.url}
                   alt={item.title}
-                  className="w-full h-full object-cover grayscale-[40%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
+                  className="w-full h-full object-cover grayscale-40 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
                 />
 
                 {/* COMPLEX OVERLAY: Glitch + Data */}
-                <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-all duration-500 p-10 flex flex-col justify-between backdrop-blur-[4px]">
+                <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-all duration-500 p-6 md:p-10 flex flex-col justify-between backdrop-blur-xs">
                   <div className="flex justify-between items-start">
                     <div className="flex flex-col gap-1">
-                      <span className="text-primary text-[8px] font-mono font-black tracking-[0.5em] uppercase">Security_Verified</span>
-                      <div className="w-4 h-4 text-white/40"><ShieldAlert size={16} /></div>
+                      <span className="text-primary text-[7px] md:text-[8px] font-mono font-black tracking-[0.5em] uppercase">Security_Verified</span>
+                      <div className="w-4 h-4 text-white/40"><ShieldAlert size={14} /></div>
                     </div>
-                    <div className="px-4 py-2 border border-white/10 rounded-full font-mono text-[9px] text-white/50 uppercase tracking-widest">
+                    <div className="px-3 py-1.5 md:px-4 md:py-2 border border-white/10 rounded-full font-mono text-[8px] md:text-[9px] text-white/50 uppercase tracking-widest">
                       S_ARCH {idx + 1}04
                     </div>
                   </div>
 
-                  <div className="flex flex-col gap-4">
-                    <h3 className="text-3xl md:text-4xl font-display font-black text-white uppercase italic tracking-tighter leading-none">
+                  <div className="flex flex-col gap-3 md:gap-4">
+                    <h3 className="text-2xl md:text-4xl font-display font-black text-white uppercase italic tracking-tighter leading-none">
                       {item.title}
                     </h3>
-                    <div className="flex items-center gap-4 text-white/40 group/btn">
+                    <div className="flex items-center gap-3 md:gap-4 text-white/40 group/btn">
                       <span className="text-[10px] font-mono font-black uppercase tracking-widest">Access Full Metrics</span>
-                      <div className="w-10 h-px bg-primary group-hover/btn:w-20 transition-all duration-500" />
+                      <div className="w-8 h-px bg-primary group-hover/btn:w-20 transition-all duration-500" />
                     </div>
                   </div>
 
@@ -147,13 +147,13 @@ export default function GalleryPage() {
         </div>
 
         {/* FOOTER: Complex Text Block */}
-        <section className="mt-60 text-center relative">
-          <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[60vw] h-[60vw] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
-          <div className="inline-flex items-center gap-6 mb-12">
+        <section className="mt-40 md:mt-60 text-center relative">
+          <div className="absolute -top-20 md:-top-40 left-1/2 -translate-x-1/2 w-[60vw] h-[60vw] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
+          <div className="inline-flex items-center gap-4 md:gap-6 mb-8 md:mb-12">
             <Instagram size={20} className="text-primary" />
-            <span className="text-[10px] font-mono font-black text-text/20 uppercase tracking-[1em]">India_Pure_Bake_Unit</span>
+            <span className="text-[10px] font-mono font-black text-text/20 uppercase tracking-[0.6em] md:tracking-[1em]">India_Pure_Bake_Unit</span>
           </div>
-          <h2 className="text-5xl md:text-[8vw] font-display font-black uppercase italic tracking-tighter leading-[0.85] mb-20">
+          <h2 className="text-4xl md:text-[8vw] font-display font-black uppercase italic tracking-tighter leading-[0.85] mb-12 md:mb-20">
             JOIN THE <br /> <span className="text-primary not-italic">ARCHIVE.</span>
           </h2>
           <motion.button
@@ -174,7 +174,7 @@ export default function GalleryPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[1000] bg-black flex flex-col lg:flex-row p-6 md:p-12 overflow-y-auto lg:overflow-hidden"
+            className="fixed inset-0 z-1000 bg-black flex flex-col lg:flex-row p-6 md:p-12 overflow-y-auto lg:overflow-hidden"
           >
             {/* Large Asset Side */}
             <div className="w-full lg:w-2/3 h-[50vh] lg:h-full relative rounded-[3rem] overflow-hidden border border-white/10">

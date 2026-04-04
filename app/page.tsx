@@ -272,7 +272,7 @@ export default function Home() {
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-7xl mx-auto group/wall">
+          <div className="grid grid-cols-2 md:grid-cols-2 gap-4 md:gap-6 max-w-7xl mx-auto group/wall">
             {testimonials.map((t, i) => (
               <div key={i}>
                 <TestimonialCard testimonial={t} index={i} />
@@ -295,7 +295,7 @@ export default function Home() {
       </section>
 
       {/* CTA: Asymmetrical Dispatch Console */}
-      <section className="py-24 px-6 relative bg-cream overflow-hidden">
+      <section className="py-16 md:py-24 px-6 relative bg-cream overflow-hidden">
         <div className="container mx-auto bg-primary rounded-[3rem] overflow-hidden relative shadow-[0_60px_100px_rgba(192,24,42,0.2)] border border-white/10 group/cta">
           {/* Sculptural Background */}
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10 pointer-events-none" />
@@ -304,20 +304,20 @@ export default function Home() {
 
           <div className="relative z-10 flex flex-col lg:flex-row items-center lg:items-stretch min-h-[400px]">
             {/* Left: Content */}
-            <div className="flex-1 p-12 md:p-20 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-white/10">
-              <div className="flex items-center gap-4 mb-8">
+            <div className="flex-1 p-8 md:p-20 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-white/10">
+              <div className="flex items-center gap-4 mb-6 md:mb-8">
                 <div className="px-3 py-1 bg-black/20 backdrop-blur-md rounded-sm border border-white/10">
                   <span className="text-[10px] font-mono font-black text-cream tracking-[0.3em]">UNIT_READY://09</span>
                 </div>
               </div>
-              <h2 className="text-5xl md:text-8xl font-display font-black text-white leading-[0.85] tracking-tighter mb-10">
-                SECURE_THE<br />
+              <h2 className="text-3xl md:text-8xl font-display font-black text-white leading-[0.85] tracking-tighter mb-8 md:mb-10 wrap-break-word uppercase">
+                SECURE_THE<br className="md:block" />
                 <span className="text-white/20 group-hover/cta:text-black transition-colors duration-700">SIGNATURE_SLICE</span>
               </h2>
             </div>
 
             {/* Right: Technical Console */}
-            <div className="w-full lg:w-[450px] bg-black/5 backdrop-blur-xl p-12 md:p-16 flex flex-col items-center justify-center gap-10">
+            <div className="w-full lg:w-[450px] bg-black/5 backdrop-blur-xl p-8 md:p-16 flex flex-col items-center justify-center gap-8 md:gap-10">
               <div className="w-full">
                 <div className="flex justify-between items-end mb-4">
                   <span className="text-[10px] font-mono font-black text-white/40 uppercase tracking-widest">Readiness_Index</span>
