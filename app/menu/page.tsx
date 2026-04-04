@@ -11,13 +11,13 @@ function SideCategoryItem({ label, isActive, onClick, sub }: any) {
   return (
     <button
       onClick={onClick}
-      className="group flex flex-col items-start gap-1 py-4 border-b border-white/5 w-full text-left relative overflow-hidden px-8"
+      className={`group flex flex-col lg:items-start items-center gap-1 py-3 lg:py-4 lg:border-b border-white/5 w-full text-left relative overflow-hidden px-4 lg:px-8 transition-all duration-500 ${isActive ? 'bg-black/5 lg:bg-transparent rounded-2xl lg:rounded-none' : ''}`}
     >
-      <div className="flex items-center gap-4">
-        <span className={`text-[10px] font-mono font-black transition-all duration-500 ${isActive ? 'text-primary scale-110' : 'text-text/10 group-hover:text-text/30'}`}>
+      <div className="flex items-center gap-3 lg:gap-4">
+        <span className={`text-[8px] lg:text-[10px] font-mono font-black transition-all duration-500 ${isActive ? 'text-primary scale-110' : 'text-text/10 group-hover:text-text/30'}`}>
           0{sub}
         </span>
-        <span className={`text-xl md:text-3xl font-display font-black uppercase tracking-tighter transition-all duration-700 ${isActive ? 'text-text translate-x-3' : 'text-text/10 group-hover:text-text/30 group-hover:translate-x-2'
+        <span className={`text-sm lg:text-3xl font-display font-black uppercase tracking-tighter transition-all duration-700 whitespace-nowrap ${isActive ? 'text-text lg:translate-x-3' : 'text-text/10 group-hover:text-text/30 group-hover:translate-x-2'
           }`}>
           {label}
         </span>
@@ -25,7 +25,7 @@ function SideCategoryItem({ label, isActive, onClick, sub }: any) {
       {isActive && (
         <motion.div
           layoutId="sideIndicator"
-          className="absolute right-0 top-0 bottom-0 w-1.5 bg-primary shadow-[0_0_20px_rgba(192,24,42,0.8)]"
+          className="absolute lg:right-0 lg:top-0 lg:bottom-0 bottom-0 left-4 right-4 h-0.5 lg:h-auto lg:w-1.5 bg-primary shadow-[0_0_20px_rgba(192,24,42,0.8)]"
         />
       )}
     </button>
@@ -114,13 +114,13 @@ export default function MenuPage() {
   const filteredItems = menuItems.filter(item => item.category === activeCategory);
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-white text-text">
+    <div ref={containerRef} className="min-h-screen bg-white text-text overflow-x-hidden">
 
       {/* Complex Layout Structure */}
       <div className="flex flex-col lg:flex-row min-h-screen">
 
         {/* LEFT FIXATION: Architectural Sidebar Navigation (FIXED ON DESKTOP) */}
-        <aside className="lg:sticky lg:top-0 lg:w-1/4 lg:h-screen lg:z-50 bg-white flex flex-col gap-8 sticky top-[80px] z-30 lg:bg-white py-12 lg:py-0 px-4 -mx-6 lg:mx-0 border-b border-black/5 lg:border-r lg:border-black/5 overflow-hidden">
+        <aside className="lg:sticky lg:top-0 lg:w-1/4 lg:h-screen lg:z-50 bg-white/80 backdrop-blur-md lg:bg-white flex flex-col gap-8 sticky top-[68px] z-30 py-4 lg:py-0 px-4 border-b border-black/5 lg:border-r lg:border-black/5 overflow-hidden">
 
           {/* Subtle Fine Texture */}
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] opacity-[0.03] pointer-events-none" />
@@ -139,7 +139,7 @@ export default function MenuPage() {
               </p>
             </div>
 
-            <div className="flex flex-row lg:flex-col w-full overflow-x-auto lg:overflow-visible no-scrollbar gap-4 lg:gap-0 mt-10">
+            <div className="flex flex-row lg:flex-col w-full overflow-x-auto lg:overflow-visible no-scrollbar gap-2 lg:gap-0 mt-4 lg:mt-10 px-2 lg:px-0">
               {categories.map((cat, idx) => (
                 <div key={cat.id} className="min-w-fit lg:w-full">
                   <SideCategoryItem
@@ -169,7 +169,7 @@ export default function MenuPage() {
         </aside>
 
         {/* RIGHT STAGE: Grid of Selection (SCROLLABLE) */}
-        <main className="w-full lg:w-3/4 relative pt-40 lg:pt-32 px-6 lg:px-20 pb-40">
+        <main className="w-full lg:w-3/4 relative pt-12 lg:pt-32 px-6 lg:px-20 pb-40">
 
           {/* Dynamic Background Spotlight */}
           <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[150px] pointer-events-none" />

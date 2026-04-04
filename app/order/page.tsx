@@ -168,7 +168,7 @@ export default function OrderPage() {
 
                            <button
                               type="submit"
-                              className="w-full py-8 bg-black text-white rounded-full font-mono font-black text-xs uppercase tracking-[0.6em] hover:bg-primary transition-all shadow-3xl flex items-center justify-center gap-6 group"
+                               className="w-full py-5 md:py-8 bg-black text-white rounded-full font-mono font-black text-[10px] md:text-xs uppercase tracking-[0.2em] md:tracking-[0.6em] hover:bg-primary transition-all shadow-3xl flex items-center justify-center gap-4 md:gap-6 group"
                            >
                               EXECUTE DISPATCH PROTOCOL
                               <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
