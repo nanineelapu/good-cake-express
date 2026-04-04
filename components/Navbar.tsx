@@ -139,10 +139,10 @@ export default function Navbar() {
         </motion.div>
 
         <button
-          className={`md:hidden text-white p-3 rounded-full border border-white/10 shadow-2xl flex items-center justify-center transition-all active:scale-95 ${isMobile ? 'bg-black/80' : 'bg-black/60 backdrop-blur-xl hover:bg-black/80'}`}
+          className={`md:hidden text-white w-[12vw] h-[12vw] rounded-full border border-white/10 shadow-2xl flex items-center justify-center transition-all active:scale-95 z-[110] bg-black/80`}
           onClick={() => setIsOpen(!isOpen)}
         >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+          {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
       </div>
 
