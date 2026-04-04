@@ -19,7 +19,7 @@ export default function Footer() {
   });
 
   const [sweetTip, setSweetTip] = useState("");
-  const [particles, setParticles] = useState<{x: string, y: string, scale: number}[]>([]);
+  const [particles, setParticles] = useState<{ x: string, y: string, scale: number }[]>([]);
 
   const tips = [
     "Refrigerate your cake for 30 mins before slicing.",
@@ -30,7 +30,7 @@ export default function Footer() {
 
   useEffect(() => {
     setSweetTip(tips[Math.floor(Math.random() * tips.length)]);
-    
+
     // Generate particles on client only to avoid hydration mismatch
     const newParticles = [...Array(6)].map(() => ({
       x: Math.random() * 100 + "%",
@@ -57,24 +57,24 @@ export default function Footer() {
 
   const itemFade: Variants = {
     hidden: { opacity: 0, y: 15 },
-    show: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { 
-        duration: 0.4, 
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.4,
         ease: [0.22, 1, 0.36, 1]
-      } 
+      }
     }
   };
 
   return (
-    <footer 
+    <footer
       ref={containerRef}
       className="relative bg-[#0F0505] text-cream pt-16 pb-8 overflow-hidden"
     >
       {/* Progress Bar */}
       <div className="absolute top-0 left-0 w-full h-[2px] bg-white/5 overflow-hidden">
-        <motion.div 
+        <motion.div
           style={{ scaleX: scrollXSpring }}
           className="h-full bg-primary origin-left"
         />
@@ -87,7 +87,7 @@ export default function Footer() {
 
       {/* Background Decor */}
       <div className="absolute inset-0 pointer-events-none opacity-10">
-        <motion.div 
+        <motion.div
           style={{ y: useTransform(scrollYProgress, [0, 1], [0, -50]) }}
           className="absolute -top-12 -left-12 w-64 h-64 bg-primary/20 blur-[80px] rounded-full"
         />
@@ -103,18 +103,18 @@ export default function Footer() {
             key={i}
             viewBox="0 0 24 24"
             className="absolute text-primary/10 w-8 h-8"
-            initial={{ 
-              x: p.x, 
+            initial={{
+              x: p.x,
               y: p.y,
               rotate: 0,
               scale: p.scale
             }}
-            animate={{ 
+            animate={{
               y: [0, -20, 20, 0],
               rotate: [0, 180, 360],
             }}
-            transition={{ 
-              duration: 10 + Math.random() * 20, 
+            transition={{
+              duration: 10 + Math.random() * 20,
               repeat: Infinity,
               ease: "linear"
             }}
@@ -126,7 +126,7 @@ export default function Footer() {
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Compact Integrated CTA Header */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -134,25 +134,25 @@ export default function Footer() {
         >
           <div className="flex items-center gap-6">
             <motion.div
-               animate={{ y: [0, -5, 0] }}
-               transition={{ duration: 3, repeat: Infinity }}
-               className="w-16 h-16 md:w-20 md:h-20 shrink-0"
-             >
-                <svg viewBox="0 0 200 200" fill="none" className="w-full h-full drop-shadow-[0_10px_20px_rgba(192,24,42,0.3)]">
-                  <path d="M40 140C40 128.954 48.9543 120 60 120H140C151.046 120 160 128.954 160 140V160C160 165.523 155.523 170 150 170H50C44.4772 170 40 165.523 40 160V140Z" fill="#C0182A" />
-                  <path d="M50 100C50 88.9543 58.9543 80 70 80H130C141.046 80 150 88.9543 150 100V120H50V100Z" fill="#FBF7F2" fillOpacity="0.9" />
-                  <circle cx="100" cy="70" r="10" fill="#C0182A" />
-                  <rect x="50" y="120" width="100" height="3" fill="#D4A853" />
-                </svg>
-             </motion.div>
-             <div className="text-center md:text-left">
-                <h2 className="text-2xl md:text-4xl font-display font-bold leading-tight">
-                  Experience <span className="text-primary italic">Cake Perfection</span>
-                </h2>
-                <p className="text-white/40 text-sm mt-1">Handcrafted with 100% pure passion and ingredients.</p>
-             </div>
+              animate={{ y: [0, -5, 0] }}
+              transition={{ duration: 3, repeat: Infinity }}
+              className="w-16 h-16 md:w-20 md:h-20 shrink-0"
+            >
+              <svg viewBox="0 0 200 200" fill="none" className="w-full h-full drop-shadow-[0_10px_20px_rgba(192,24,42,0.3)]">
+                <path d="M40 140C40 128.954 48.9543 120 60 120H140C151.046 120 160 128.954 160 140V160C160 165.523 155.523 170 150 170H50C44.4772 170 40 165.523 40 160V140Z" fill="#C0182A" />
+                <path d="M50 100C50 88.9543 58.9543 80 70 80H130C141.046 80 150 88.9543 150 100V120H50V100Z" fill="#FBF7F2" fillOpacity="0.9" />
+                <circle cx="100" cy="70" r="10" fill="#C0182A" />
+                <rect x="50" y="120" width="100" height="3" fill="#D4A853" />
+              </svg>
+            </motion.div>
+            <div className="text-center md:text-left">
+              <h2 className="text-2xl md:text-4xl font-display font-bold leading-tight">
+                Experience <span className="text-primary italic">Cake Perfection</span>
+              </h2>
+              <p className="text-white/40 text-sm mt-1">Handcrafted with 100% pure passion and ingredients.</p>
+            </div>
           </div>
-          <Link 
+          <Link
             href="/order"
             className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full font-medium text-sm transition-all transform hover:scale-105 shadow-lg shadow-primary/20 flex items-center gap-2"
           >
@@ -160,7 +160,7 @@ export default function Footer() {
           </Link>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="show"
@@ -182,7 +182,7 @@ export default function Footer() {
                 </div>
               </div>
             </Link>
-            
+
             <p className="text-white/40 text-[11px] uppercase tracking-[0.2em] font-medium leading-relaxed">
               "Cake ho to acha ho varna na hi ho"
               <span className="block mt-1 font-accent normal-case text-lg text-accent tracking-normal">— Our Promise</span>

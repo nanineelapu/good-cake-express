@@ -23,7 +23,7 @@ export default function CakeCard({ item }: CakeCardProps) {
           fill
           className="object-cover transition-transform duration-1000 group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80" />
+        <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/20 to-transparent opacity-80" />
       </div>
 
       {/* Static Info (Title & Tag) */}
@@ -34,26 +34,26 @@ export default function CakeCard({ item }: CakeCardProps) {
               {tag}
             </span>
           ))}
-          <h3 className="text-2xl font-display font-black text-white leading-tight">
+          <h3 className="text-2xl font-display font-black text-text leading-tight">
             {item.name}
           </h3>
         </div>
       </div>
 
       {/* Hover Information Layer */}
-      <div className="absolute inset-x-0 bottom-0 z-20 p-8 pt-20 bg-gradient-to-t from-black via-black/90 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)]">
+      <div className="absolute inset-x-0 bottom-0 z-20 p-8 pt-20 bg-gradient-to-t from-white via-white/95 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)]">
         <div className="flex flex-col gap-6">
           {/* Rating & Price */}
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-1.5 text-primary">
               {[1,2,3,4,5].map(i => <Star key={i} size={14} fill="currentColor" />)}
             </div>
-            <span className="text-white font-mono font-black text-lg">
+            <span className="text-text font-mono font-black text-lg">
               {item.price}
             </span>
           </div>
 
-          <p className="text-white/60 text-sm font-medium leading-relaxed italic">
+          <p className="text-text/60 text-sm font-medium leading-relaxed italic">
             {item.description || "Freshly baked, 100% eggless delight from The Good Cake Express."}
           </p>
 
@@ -67,7 +67,7 @@ export default function CakeCard({ item }: CakeCardProps) {
               Order Now
               <ShoppingBag size={14} />
             </motion.button>
-            <div className="w-12 h-12 rounded-2xl border border-white/20 flex items-center justify-center text-white/40 hover:text-white transition-colors cursor-pointer">
+            <div className="w-12 h-12 rounded-2xl border border-black/5 flex items-center justify-center text-text/10 hover:text-primary transition-colors cursor-pointer">
                <Zap size={18} />
             </div>
           </div>
@@ -75,7 +75,7 @@ export default function CakeCard({ item }: CakeCardProps) {
       </div>
 
       {/* Glass Corner Overlay (Default) */}
-      <div className="absolute top-6 right-6 z-10 w-10 h-10 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 text-white group-hover:opacity-0 transition-opacity">
+      <div className="absolute top-6 right-6 z-10 w-10 h-10 bg-primary/5 backdrop-blur-md rounded-full flex items-center justify-center border border-primary/10 text-primary group-hover:opacity-0 transition-opacity shadow-sm">
         <Zap size={16} />
       </div>
     </motion.div>

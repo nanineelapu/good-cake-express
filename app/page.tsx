@@ -310,9 +310,9 @@ export default function Home() {
                   <span className="text-[10px] font-mono font-black text-cream tracking-[0.3em]">UNIT_READY://09</span>
                 </div>
               </div>
-              <h2 className="text-5xl md:text-8xl font-display font-black text-cream leading-[0.85] tracking-tighter mb-10">
+              <h2 className="text-5xl md:text-8xl font-display font-black text-white leading-[0.85] tracking-tighter mb-10">
                 SECURE_THE<br />
-                <span className="text-black/30 group-hover/cta:text-black transition-colors duration-700">SIGNATURE_SLICE</span>
+                <span className="text-white/20 group-hover/cta:text-black transition-colors duration-700">SIGNATURE_SLICE</span>
               </h2>
             </div>
 
@@ -320,8 +320,8 @@ export default function Home() {
             <div className="w-full lg:w-[450px] bg-black/5 backdrop-blur-xl p-12 md:p-16 flex flex-col items-center justify-center gap-10">
               <div className="w-full">
                 <div className="flex justify-between items-end mb-4">
-                  <span className="text-[10px] font-mono font-black text-cream/40 uppercase tracking-widest">Readiness_Index</span>
-                  <span className="text-xl font-mono font-black text-cream tracking-tighter">100%</span>
+                  <span className="text-[10px] font-mono font-black text-white/40 uppercase tracking-widest">Readiness_Index</span>
+                  <span className="text-xl font-mono font-black text-white tracking-tighter">100%</span>
                 </div>
                 <div className="h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
                   <motion.div
@@ -338,7 +338,7 @@ export default function Home() {
                   <motion.button
                     whileHover={{ scale: 1.02, x: 5 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full bg-cream text-primary p-6 rounded-2xl font-black text-lg flex items-center justify-between group/btn shadow-xl"
+                    className="w-full bg-white text-primary p-6 rounded-2xl font-black text-lg flex items-center justify-between group/btn shadow-xl"
                   >
                     ORDER DISPATCH
                     <MessageCircle size={22} className="group-hover/btn:rotate-12 transition-transform" />
@@ -348,7 +348,7 @@ export default function Home() {
                   <motion.button
                     whileHover={{ scale: 1.02, x: 5 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full bg-white/5 border-2 border-white/10 text-cream p-6 rounded-2xl font-black text-lg flex items-center justify-between group/btn hover:bg-white/10 transition-all uppercase"
+                    className="w-full bg-white/5 border-2 border-white/10 text-white p-6 rounded-2xl font-black text-lg flex items-center justify-between group/btn hover:bg-white/10 transition-all uppercase"
                   >
                     VOICE_CALL
                     <Phone size={18} className="opacity-40" />

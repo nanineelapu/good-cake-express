@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #C0182A;
-  --color-accent: #D4A853;
+  --color-primary: #C0182A; /* Bold Red */
+  --color-accent: #C0182A; /* Using Red for accents too */
   --color-bg: #FFFFFF;
-  --color-bg-soft: #FBF7F2;
-  --color-surface: #F5E6E6;
-  --color-cream: #FDF8F2;
-  --color-rose: #F2D4D4;
-  --color-text: #1A0808;
-  --color-muted: #6B5E59;
+  --color-bg-soft: #FAFAFA;
+  --color-surface: #F8F8F8;
+  --color-cream: #FFFDFB;
+  --color-rose: #FFF1F1;
+  --color-text: #0A0A0A;
+  --color-muted: #4A4A4A;
 
   --font-display: var(--font-playfair);
   --font-serif: var(--font-cormorant);
@@ -91,4 +91,20 @@ html, body {
 
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
+}
+
+/* Custom Utilities for Menu */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.sticky-blur {
+  background: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }

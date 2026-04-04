@@ -47,14 +47,14 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-transparent py-5">
+    <nav className="fixed top-0 left-0 w-full z-[100] bg-transparent py-5">
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* Logo Pod with Original Detailed Style */}
         <motion.div
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="flex items-center gap-4 p-1 bg-black/80 backdrop-blur-xl rounded-full border border-white/10 shadow-2xl overflow-hidden"
+          className="flex items-center gap-4 p-1 bg-black/60 backdrop-blur-xl rounded-full border border-white/10 shadow-2xl overflow-hidden"
         >
           <Link href="/" className="flex items-center gap-2 px-4 py-1.5 group">
             <motion.div
@@ -97,7 +97,7 @@ export default function Navbar() {
         </motion.div>
 
         <motion.div
-          className="hidden md:flex items-center gap-1 p-1 bg-black/80 backdrop-blur-xl rounded-full border border-white/10 shadow-2xl"
+          className="hidden md:flex items-center gap-1 p-1 bg-black/60 backdrop-blur-xl rounded-full border border-white/10 shadow-2xl"
           style={{ originX: 0.5 }}
           variants={staggerContainer}
           initial="hidden"
@@ -108,7 +108,7 @@ export default function Navbar() {
               <motion.div key={link.href} variants={navItemVariants}>
                 <Link
                   href={link.href}
-                  className={`relative px-4 py-2 text-sm font-medium tracking-wide transition-all duration-300 rounded-full hover:bg-white/10 ${pathname === link.href ? 'text-white' : 'text-white/70'
+                  className={`relative px-4 py-2 text-sm font-medium tracking-wide transition-all duration-300 rounded-full hover:bg-white/10 ${pathname === link.href ? 'text-primary' : 'text-white/70'
                     }`}
                 >
                   {link.name}
@@ -121,7 +121,7 @@ export default function Navbar() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-primary hover:bg-primary/90 text-cream px-6 py-2.5 rounded-full font-bold text-sm tracking-wide shadow-lg flex items-center gap-2"
+                className="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-full font-bold text-sm tracking-wide shadow-lg flex items-center gap-2"
               >
                 Order Now
                 <ShoppingBag size={16} />
@@ -131,7 +131,7 @@ export default function Navbar() {
         </motion.div>
 
         <button
-          className="md:hidden text-text p-2"
+          className="md:hidden text-white p-2"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X size={28} /> : <Menu size={28} />}
@@ -146,10 +146,10 @@ export default function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 120 }}
-            className="fixed inset-0 bg-cream z-[100] flex flex-col items-center justify-center gap-8 md:hidden"
+            className="fixed inset-0 bg-black z-[100] flex flex-col items-center justify-center gap-8 md:hidden text-white"
           >
             <button
-              className="absolute top-6 right-6 text-text"
+              className="absolute top-6 right-6 text-white"
               onClick={() => setIsOpen(false)}
             >
               <X size={32} />
@@ -164,7 +164,7 @@ export default function Navbar() {
                 >
                   <Link
                     href={link.href}
-                    className="text-3xl font-display font-semibold text-text hover:text-primary transition-colors"
+                    className="text-3xl font-display font-semibold text-white hover:text-primary transition-colors"
                     onClick={() => setIsOpen(false)}
                   >
                     {link.name}

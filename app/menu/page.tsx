@@ -11,22 +11,21 @@ function SideCategoryItem({ label, isActive, onClick, sub }: any) {
   return (
     <button
       onClick={onClick}
-      className="group flex flex-col items-start gap-1 py-6 border-b border-white/5 w-full text-left relative overflow-hidden"
+      className="group flex flex-col items-start gap-1 py-4 border-b border-white/5 w-full text-left relative overflow-hidden px-8"
     >
-      <div className="flex items-center gap-3">
-        <span className={`text-[10px] font-mono font-black transition-colors ${isActive ? 'text-primary' : 'text-white/20'}`}>
+      <div className="flex items-center gap-4">
+        <span className={`text-[10px] font-mono font-black transition-all duration-500 ${isActive ? 'text-primary scale-110' : 'text-text/10 group-hover:text-text/30'}`}>
           0{sub}
         </span>
-        <span className={`text-2xl md:text-4xl font-display font-black uppercase tracking-tighter transition-all duration-700 ${
-          isActive ? 'text-white translate-x-4' : 'text-white/20 group-hover:text-white/60 group-hover:translate-x-2'
-        }`}>
+        <span className={`text-xl md:text-3xl font-display font-black uppercase tracking-tighter transition-all duration-700 ${isActive ? 'text-text translate-x-3' : 'text-text/10 group-hover:text-text/30 group-hover:translate-x-2'
+          }`}>
           {label}
         </span>
       </div>
       {isActive && (
-        <motion.div 
+        <motion.div
           layoutId="sideIndicator"
-          className="absolute left-0 top-0 bottom-0 w-1 bg-primary"
+          className="absolute right-0 top-0 bottom-0 w-1.5 bg-primary shadow-[0_0_20px_rgba(192,24,42,0.8)]"
         />
       )}
     </button>
@@ -36,55 +35,56 @@ function SideCategoryItem({ label, isActive, onClick, sub }: any) {
 function EliteProductCard({ item, index }: any) {
   return (
     <motion.div
-      initial={{ opacity: 0, x: 20 }}
-      whileInView={{ opacity: 1, x: 0 }}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: index * 0.1, duration: 1, ease: [0.22, 1, 0.36, 1] }}
-      className="group relative flex flex-col gap-6"
+      transition={{ delay: index * 0.05, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      className="group relative flex flex-col gap-4"
     >
       {/* Precision Stage */}
-      <div className="relative aspect-[3/4] rounded-[2rem] overflow-hidden bg-neutral-900 border border-white/5 group-hover:border-white/20 transition-colors duration-700">
+      <div className="relative aspect-4/5 rounded-[2.5rem] overflow-hidden bg-[#F0F0F0] border border-black/[0.03] group-hover:border-primary/20 transition-all duration-700 shadow-sm hover:shadow-2xl">
         <Image
           src={item.image}
           alt={item.name}
           fill
-          className="object-cover transition-transform duration-[3000ms] group-hover:scale-105 group-hover:rotate-1 opacity-80 group-hover:opacity-100"
+          className="object-cover transition-transform duration-[3000ms] group-hover:scale-105 group-hover:rotate-1"
         />
-        
+
         {/* Elite Corner Tags */}
-        <div className="absolute top-6 left-6 z-10 flex flex-col gap-2">
-          {item.tags?.map((tag: any) => (
-            <span key={tag} className="px-3 py-1.5 bg-black/40 backdrop-blur-xl border border-white/10 text-[8px] font-mono font-black text-white uppercase tracking-[0.2em] rounded-lg">
+        <div className="absolute top-6 left-6 z-10 flex flex-col gap-1.5">
+          {item.tags?.slice(0, 2).map((tag: any) => (
+            <span key={tag} className="px-2.5 py-1.5 bg-white/90 backdrop-blur-md border border-black/5 text-[8px] font-mono font-black text-text uppercase tracking-[0.2em] rounded-lg shadow-sm">
               {tag}
             </span>
           ))}
         </div>
 
         {/* Action Reveal */}
-        <div className="absolute inset-0 z-20 flex items-center justify-center translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] backdrop-blur-sm bg-black/20">
+        <div className="absolute inset-x-0 bottom-0 z-20 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-700 bg-linear-to-t from-white via-white/80 to-transparent backdrop-blur-sm">
           <motion.button
-            whileHover={{ scale: 1.1, rotate: 5 }}
-            whileTap={{ scale: 0.9 }}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
             onClick={() => window.open(`https://wa.me/919041829041?text=Hi! I want to order ${item.name}`, '_blank')}
-            className="w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center shadow-2xl"
+            className="w-full h-14 bg-primary text-white rounded-2xl flex items-center justify-center gap-3 font-black text-[11px] uppercase tracking-widest shadow-xl"
           >
-            <ShoppingBag size={24} />
+            Add to Selection
+            <ShoppingBag size={16} />
           </motion.button>
         </div>
       </div>
 
       {/* Info Tier */}
-      <div className="flex flex-col gap-2 relative">
-        <div className="flex justify-between items-start">
-          <h3 className="text-xl md:text-2xl font-display font-black text-white uppercase tracking-tighter">
+      <div className="flex flex-col gap-1 px-2">
+        <div className="flex justify-between items-center gap-2">
+          <h3 className="text-base font-display font-black text-text uppercase tracking-tight leading-tight line-clamp-1 italic">
             {item.name}
           </h3>
-          <span className="text-[11px] font-mono font-black text-primary uppercase bg-primary/5 px-2 py-1 rounded">
-            {item.price}
+          <span className="text-[11px] font-mono font-black text-primary uppercase">
+            {item.price?.split(' ')[0]}
           </span>
         </div>
-        <p className="text-white/40 text-xs font-medium leading-relaxed line-clamp-2 max-w-[90%] italic">
-          {item.description || "A masterclass in artisanal eggless patisserie. Curated for the finest palates."}
+        <p className="text-text/30 text-[11px] font-medium leading-tight line-clamp-2 italic">
+          {item.description || "Elite artisanal patisserie unit."}
         </p>
       </div>
     </motion.div>
@@ -95,7 +95,7 @@ export default function MenuPage() {
   const [activeCategory, setActiveCategory] = useState('Cakes');
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const containerRef = useRef(null);
-  
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"]
@@ -114,54 +114,63 @@ export default function MenuPage() {
   const filteredItems = menuItems.filter(item => item.category === activeCategory);
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-[#050505] text-white overflow-hidden pb-40">
-      
+    <div ref={containerRef} className="min-h-screen bg-white text-text">
+
       {/* Complex Layout Structure */}
-      <div className="flex flex-col lg:flex-row min-h-screen pt-40 container mx-auto px-6 gap-20">
-        
-        {/* LEFT FIXATION: Architectural Sidebar Navigation */}
-        <aside className="lg:w-1/3 flex flex-col gap-12 lg:sticky lg:top-40 lg:h-[calc(100vh-160px)] z-10">
-          
-          <div className="flex flex-col gap-4">
-            <span className="text-[10px] font-mono font-black text-primary uppercase tracking-[0.5em] mb-2 px-1">_Inventory_System</span>
-            <h1 className="text-7xl md:text-9xl font-display font-black text-white leading-[0.8] tracking-tighter uppercase italic">
-              Menu <br /> <span className="text-primary not-italic">024</span>
-            </h1>
-            <p className="text-white/30 text-sm font-medium max-w-xs mt-6 leading-relaxed italic">
-              Navigating through the artisanal layers of eggless perfection. Selected with precision.
-            </p>
-          </div>
+      <div className="flex flex-col lg:flex-row min-h-screen">
 
-          <div className="flex flex-col w-full mt-12">
-            {categories.map((cat, idx) => (
-              <SideCategoryItem 
-                key={cat.id}
-                sub={idx + 1}
-                label={cat.label}
-                isActive={activeCategory === cat.id}
-                onClick={() => setActiveCategory(cat.id)}
-              />
-            ))}
-          </div>
+        {/* LEFT FIXATION: Architectural Sidebar Navigation (FIXED ON DESKTOP) */}
+        <aside className="lg:sticky lg:top-0 lg:w-1/4 lg:h-screen lg:z-50 bg-white flex flex-col gap-8 sticky top-[80px] z-30 lg:bg-white py-12 lg:py-0 px-4 -mx-6 lg:mx-0 border-b border-black/5 lg:border-r lg:border-black/5 overflow-hidden">
 
-          {/* Elite Utility Pill */}
-          <div className="mt-auto flex items-center gap-6">
-            <div className="flex flex-col gap-1">
-              <span className="text-[9px] font-mono font-black text-white/20 uppercase tracking-widest">Chandigarh Boutique</span>
-              <span className="text-[9px] font-mono font-black text-white/40 uppercase tracking-widest">Daily Slots Op: 10:00 - 22:00</span>
+          {/* Subtle Fine Texture */}
+          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] opacity-[0.03] pointer-events-none" />
+
+          <div className="flex flex-col h-full relative z-10">
+            <div className="hidden lg:flex flex-col gap-4 px-12 pt-32">
+              <div className="flex items-center gap-3">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse shadow-[0_0_8px_rgba(192,24,42,1)]" />
+                <span className="text-[9px] font-mono font-black text-primary uppercase tracking-[0.6em]">UNIT_SYS://09</span>
+              </div>
+              <h1 className="text-5xl lg:text-6xl font-display font-black text-text leading-[0.8] tracking-tighter uppercase italic">
+                Menu <br /> <span className="text-primary not-italic">024</span>
+              </h1>
+              <p className="text-text/30 text-[10px] font-mono font-bold max-w-[180px] mt-8 leading-relaxed italic border-l border-primary/40 pl-4 uppercase">
+                Bespoke Selection <br /> for Artisanal Elite.
+              </p>
             </div>
-            <motion.div 
-              whileHover={{ scale: 1.05 }}
-              className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white/40 cursor-pointer hover:border-primary hover:text-primary transition-all shadow-2xl"
-            >
-              <Search size={18} />
-            </motion.div>
+
+            <div className="flex flex-row lg:flex-col w-full overflow-x-auto lg:overflow-visible no-scrollbar gap-4 lg:gap-0 mt-10">
+              {categories.map((cat, idx) => (
+                <div key={cat.id} className="min-w-fit lg:w-full">
+                  <SideCategoryItem
+                    sub={idx + 1}
+                    label={cat.label}
+                    isActive={activeCategory === cat.id}
+                    onClick={() => setActiveCategory(cat.id)}
+                  />
+                </div>
+              ))}
+            </div>
+
+            {/* Bottom Info Pod */}
+            <div className="hidden lg:flex mt-auto px-12 pb-16 items-center justify-between">
+              <div className="flex flex-col gap-1">
+                <span className="text-[9px] font-mono font-black text-text/10 uppercase tracking-widest">Chandigarh Unit</span>
+                <span className="text-[9px] font-mono font-black text-text/30 uppercase tracking-widest">Dispatch Active</span>
+              </div>
+              <motion.div
+                whileHover={{ rotate: 180 }}
+                className="w-10 h-10 rounded-full border border-black/5 flex items-center justify-center text-text/10 hover:text-primary transition-all"
+              >
+                <Search size={16} />
+              </motion.div>
+            </div>
           </div>
         </aside>
 
-        {/* RIGHT STAGE: Grid of Selection */}
-        <main className="lg:w-2/3 relative">
-          
+        {/* RIGHT STAGE: Grid of Selection (SCROLLABLE) */}
+        <main className="w-full lg:w-3/4 relative pt-40 lg:pt-32 px-6 lg:px-20 pb-40">
+
           {/* Dynamic Background Spotlight */}
           <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[150px] pointer-events-none" />
 
@@ -184,7 +193,7 @@ export default function MenuPage() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
-                className="text-4xl md:text-6xl font-display font-black text-white uppercase tracking-tighter"
+                className="text-4xl md:text-6xl font-display font-black text-text uppercase tracking-tighter"
               >
                 {activeCategory}
               </motion.h2>
@@ -192,7 +201,7 @@ export default function MenuPage() {
           </div>
 
           {/* Product Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-20 relative px-2">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16 relative px-2">
             {filteredItems.map((item, idx) => (
               <EliteProductCard key={item.id} item={item} index={idx} />
             ))}
@@ -200,48 +209,38 @@ export default function MenuPage() {
 
           {filteredItems.length === 0 && (
             <div className="py-60 flex flex-col items-center justify-center gap-6 border border-white/5 rounded-[4rem] bg-white/2">
-               <MenuIcon size={40} className="text-white/10 animate-pulse" />
-               <p className="text-[10px] font-mono font-black text-white/20 uppercase tracking-[0.4em]">Drafting more selections...</p>
+              <MenuIcon size={40} className="text-white/10 animate-pulse" />
+              <p className="text-[10px] font-mono font-black text-white/20 uppercase tracking-[0.4em]">Drafting more selections...</p>
             </div>
           )}
 
           {/* Custom Creation Concept Pod */}
-          <div className="mt-40 relative group">
-            <div className="absolute inset-0 bg-primary/5 rounded-[3rem] group-hover:bg-primary/10 transition-all duration-700 backdrop-blur-3xl -z-10" />
-            <div className="p-10 md:p-20 flex flex-col gap-8 relative overflow-hidden border border-white/5 rounded-[3rem]">
-              <div className="absolute top-10 right-10 flex items-center gap-2 px-4 py-2 bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl">
-                 <div className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse" />
-                 <span className="text-[9px] font-mono font-black text-white uppercase tracking-widest">Consult Available</span>
+          <div className="mt-40 relative group overflow-hidden rounded-[3.5rem] bg-[#0A0A0A]">
+            <div className="absolute inset-0 bg-primary/20 blur-[100px] opacity-10 pointer-events-none" />
+            <div className="p-12 md:p-24 flex flex-col gap-10 relative z-10">
+              <div className="flex items-center gap-3 px-4 py-2 bg-white/5 border border-white/10 rounded-2xl w-fit">
+                <div className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse shadow-[0_0_10px_rgba(192,24,42,1)]" />
+                <span className="text-[10px] font-mono font-black text-white/50 uppercase tracking-widest">Consult Service Actv</span>
               </div>
-              
-              <h3 className="text-5xl md:text-7xl font-display font-black text-white leading-none uppercase italic">
-                Bespoke <br /> 
-                <span className="text-primary not-italic">Artistry</span>
+
+              <h3 className="text-6xl md:text-8xl font-display font-black text-white leading-none uppercase italic tracking-tighter">
+                BESPOKE <br />
+                <span className="text-primary not-italic">ARTISTRY</span>
               </h3>
-              
-              <p className="text-white/40 text-lg font-medium max-w-xl italic leading-relaxed">
-                Unlock the full potential of your brand celebration. Direct access to our master patisserie for ultra-custom designs.
+
+              <p className="text-white/40 text-xl font-medium max-w-2xl italic leading-relaxed border-l-2 border-white/5 pl-8">
+                Unlock the full potential of your celebration with ultra-customized artisanal units. Direct pipeline to our master patisserie.
               </p>
 
               <motion.button
-                whileHover={{ scale: 1.02 }}
+                whileHover={{ scale: 1.02, x: 10 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => window.open(`https://wa.me/919041829041?text=Hi! I want to inquire about a custom cake`, '_blank')}
-                className="w-full sm:w-auto bg-white text-black px-12 py-6 rounded-3xl font-black text-[10px] uppercase tracking-[0.4em] flex items-center justify-center gap-4 shadow-2xl group transition-all"
+                className="w-full sm:w-auto bg-primary text-white px-12 py-6 rounded-3xl font-black text-[11px] uppercase tracking-[0.4em] flex items-center justify-center gap-6 shadow-2xl transition-all"
               >
-                Launch Consultation
-                <MessageCircle size={18} />
+                REQUEST DESIGN DRAFT
+                <ArrowUpRight size={20} />
               </motion.button>
-
-              {/* Cinematic Image Peek */}
-              <div className="absolute bottom-[-100px] right-[-100px] w-80 h-80 opacity-20 group-hover:opacity-40 transition-opacity duration-1000 rotate-12">
-                 <Image 
-                   src="https://images.unsplash.com/photo-1612203985729-70726954388c?w=600&q=80&auto=format&fit=crop" 
-                   alt="Boutique" 
-                   fill 
-                   className="object-cover rounded-[3rem]"
-                 />
-              </div>
             </div>
           </div>
         </main>
