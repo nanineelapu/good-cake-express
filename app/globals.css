@@ -79,6 +79,7 @@ html, body {
 
 .lenis.lenis-smooth {
   height: auto;
+  scroll-behavior: auto !important;
 }
 
 .lenis.lenis-smooth [data-lenis-prevent] {

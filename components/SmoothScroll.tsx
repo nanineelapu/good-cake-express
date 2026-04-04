@@ -15,11 +15,14 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
     <ReactLenis 
       root 
       options={{ 
-        lerp: 0.1, 
-        duration: 1.5, 
+        duration: 1.2,
+        lerp: 0.1,
         smoothWheel: true,
+        wheelMultiplier: 1,
+        touchMultiplier: 2,
         autoRaf: true,
-        syncTouch: true
+        syncTouch: true,
+        syncTouchLerp: 0.075,
       }}
     >
       {children as any}

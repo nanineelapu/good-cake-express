@@ -50,7 +50,7 @@ export default function HeroSection() {
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="w-20 h-20 bg-black border border-white/10 rounded-full flex items-center justify-center text-primary shadow-[0_0_50px_rgba(192,24,42,0.2)]"
+            className="w-20 h-20 bg-transparent border border-primary/20 rounded-full flex items-center justify-center text-primary shadow-[0_0_40px_rgba(192,24,42,0.1)]"
           >
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-10 h-10">
               <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
