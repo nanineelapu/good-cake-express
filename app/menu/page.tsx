@@ -115,7 +115,7 @@ export default function MenuPage() {
   const filteredItems = menuItems.filter(item => item.category === activeCategory);
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-white text-text overflow-x-hidden">
+    <div ref={containerRef} className="min-h-screen bg-white text-text overflow-x-hidden relative">
 
       {/* Complex Layout Structure */}
       <div className="flex flex-col lg:flex-row min-h-screen">
@@ -170,7 +170,7 @@ export default function MenuPage() {
         </aside>
 
         {/* RIGHT STAGE: Grid of Selection (SCROLLABLE) */}
-        <main className="w-full lg:w-3/4 relative pt-12 lg:pt-32 px-6 lg:px-20 pb-40">
+        <main className="w-full lg:w-3/4 relative pt-12 lg:pt-32 px-6 lg:px-20 pb-20">
 
           {/* Dynamic Background Spotlight */}
           <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[150px] pointer-events-none" />
@@ -216,20 +216,20 @@ export default function MenuPage() {
           )}
 
           {/* Custom Creation Concept Pod */}
-          <div className="mt-16 md:mt-40 relative group overflow-hidden rounded-[3.5rem] bg-[#0A0A0A]">
+          <div className="mt-16 md:mt-40 relative group overflow-hidden rounded-[3rem] md:rounded-[3.5rem] bg-[#0A0A0A]">
             <div className="absolute inset-0 bg-primary/20 blur-[100px] opacity-10 pointer-events-none" />
-            <div className="p-12 md:p-24 flex flex-col gap-10 relative z-10">
+            <div className="p-8 md:p-24 flex flex-col gap-6 md:gap-10 relative z-10">
               <div className="flex items-center gap-3 px-4 py-2 bg-white/5 border border-white/10 rounded-2xl w-fit">
                 <div className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse shadow-[0_0_10px_rgba(192,24,42,1)]" />
                 <span className="text-[10px] font-mono font-black text-white/50 uppercase tracking-widest">Consult Service Actv</span>
               </div>
 
-              <h3 className="text-6xl md:text-8xl font-display font-black text-white leading-none uppercase italic tracking-tighter">
+              <h3 className="text-4xl md:text-8xl font-display font-black text-white leading-none uppercase italic tracking-tighter">
                 BESPOKE <br />
                 <span className="text-primary not-italic">ARTISTRY</span>
               </h3>
 
-              <p className="text-white/40 text-xl font-medium max-w-2xl italic leading-relaxed border-l-2 border-white/5 pl-8">
+              <p className="text-white/40 text-sm md:text-xl font-medium max-w-2xl italic leading-relaxed border-l-2 border-white/5 pl-4 md:pl-8">
                 Unlock the full potential of your celebration with ultra-customized artisanal units. Direct pipeline to our master patisserie.
               </p>
 
@@ -237,27 +237,17 @@ export default function MenuPage() {
                 whileHover={{ scale: 1.02, x: 10 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => window.open(`https://wa.me/919041829041?text=Hi! I want to inquire about a custom cake`, '_blank')}
-                className="w-full sm:w-auto bg-primary text-white px-12 py-6 rounded-3xl font-black text-[11px] uppercase tracking-[0.4em] flex items-center justify-center gap-6 shadow-2xl transition-all"
+                className="w-full sm:w-auto bg-primary text-white px-8 md:px-12 py-5 md:py-6 rounded-2xl md:rounded-3xl font-black text-[10px] md:text-[11px] uppercase tracking-[0.2em] md:tracking-[0.4em] flex items-center justify-center gap-4 md:gap-6 shadow-2xl transition-all"
               >
                 REQUEST DESIGN DRAFT
-                <ArrowUpRight size={20} />
+                <ArrowUpRight size={18} />
               </motion.button>
             </div>
           </div>
         </main>
       </div>
 
-      {/* Extreme Bottom Curation */}
-      <footer className="container mx-auto px-6 mt-20 md:mt-40 border-t border-black/5 pt-10 md:pt-20 flex flex-col md:flex-row items-center justify-between gap-12 text-text/20">
-        <div className="flex items-center gap-10">
-          <span className="text-[10px] font-mono font-black uppercase tracking-[1em]">Est.2024</span>
-          <span className="text-[10px] font-mono font-black uppercase tracking-[1em]">India_Pure</span>
-        </div>
-        <div className="flex items-center gap-4 text-[10px] font-mono font-black uppercase tracking-widest group cursor-pointer hover:text-white transition-colors">
-          <span>Explore Entire Archive</span>
-          <ArrowUpRight size={14} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-        </div>
-      </footer>
+
     </div>
   );
 }

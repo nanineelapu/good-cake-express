@@ -210,7 +210,8 @@ export default function ReviewsPage() {
             <motion.button
                whileHover={{ scale: 1.05 }}
                whileTap={{ scale: 0.95 }}
-               className="px-20 py-8 bg-black text-white rounded-full font-mono font-black text-[11px] uppercase tracking-[0.5em] shadow-3xl hover:bg-primary transition-all duration-500"
+               onClick={() => window.open('https://g.page/r/CU9M-zE-3_R5EAE/review', '_blank')}
+               className="w-full sm:w-auto px-10 md:px-20 py-6 md:py-8 bg-black text-white rounded-full font-mono font-black text-[10px] md:text-[11px] uppercase tracking-[0.2em] md:tracking-[0.5em] shadow-3xl hover:bg-primary transition-all duration-500"
             >
                ACCESS REVIEW PORTAL
             </motion.button>

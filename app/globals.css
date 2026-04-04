@@ -108,3 +108,45 @@ html, body {
   -webkit-backdrop-filter: blur(20px) !important;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
+
+/* PERFORMANCE OPTIMIZATIONS FOR MOBILE */
+@media (max-width: 1024px) {
+  * {
+    /* Disable expensive backdrop blurs globally on mobile */
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* Keep slight transparency but remove the blur cost */
+  .bg-black\/60, .bg-white\/10, .bg-primary\/5, .bg-accent\/10 {
+    background-color: var(--color-bg) !important;
+    opacity: 0.95 !important;
+  }
+
+  /* Optimized animations */
+  .transform-gpu {
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  /* Fix for "glitteriness" - usually caused by subpixel rendering or overflow + gradients */
+  body {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow-x: hidden;
+    /* Prevent text flickering during scroll/animation */
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Reduce shadow spread and complexity */
+  .shadow-2xl, .shadow-xl {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  /* Disable expensive sibling blur row on mobile */
+  .lg\:\[\& \:has\(\.card-focus\:hover\)\>\.card-focus\:not\(\:hover\)\]\:blur-md {
+    filter: none !important;
+  }
+}
+

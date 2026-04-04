@@ -17,7 +17,15 @@ const navLinks = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const pathname = usePathname();
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Variants for staggered link entries
   const navItemVariants = {
@@ -54,7 +62,7 @@ export default function Navbar() {
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="flex items-center gap-4 p-1 bg-black/60 backdrop-blur-xl rounded-full border border-white/10 shadow-2xl overflow-hidden"
+          className={`flex items-center gap-4 p-1 rounded-full border border-white/10 shadow-2xl overflow-hidden ${isMobile ? 'bg-black/80' : 'bg-black/60 backdrop-blur-xl'}`}
         >
           <Link href="/" className="flex items-center gap-2 px-4 py-1.5 group">
             <motion.div
@@ -97,7 +105,7 @@ export default function Navbar() {
         </motion.div>
 
         <motion.div
-          className="hidden md:flex items-center gap-1 p-1 bg-black/60 backdrop-blur-xl rounded-full border border-white/10 shadow-2xl"
+          className={`hidden md:flex items-center gap-1 p-1 rounded-full border border-white/10 shadow-2xl ${isMobile ? 'bg-black/80' : 'bg-black/60 backdrop-blur-xl'}`}
           style={{ originX: 0.5 }}
           variants={staggerContainer}
           initial="hidden"
@@ -131,7 +139,7 @@ export default function Navbar() {
         </motion.div>
 
         <button
-          className="md:hidden text-white p-3 bg-black/60 backdrop-blur-xl rounded-full border border-white/10 shadow-2xl flex items-center justify-center hover:bg-black/80 transition-all active:scale-95"
+          className={`md:hidden text-white p-3 rounded-full border border-white/10 shadow-2xl flex items-center justify-center transition-all active:scale-95 ${isMobile ? 'bg-black/80' : 'bg-black/60 backdrop-blur-xl hover:bg-black/80'}`}
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}

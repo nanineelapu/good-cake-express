@@ -26,7 +26,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col relative">
       {/* Hero Section */}
       <HeroSection />
 
@@ -229,7 +229,7 @@ export default function Home() {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-primary/3 blur-[150px] -z-10" />
 
           {/* Sibling Blur Row: Static line of cakes */}
-          <div className="container mx-auto px-6 flex flex-wrap lg:flex-nowrap justify-center gap-8 md:gap-10 [&:has(.card-focus:hover)>.card-focus:not(:hover)]:blur-md [&:has(.card-focus:hover)>.card-focus:not(:hover)]:opacity-20 transition-all">
+          <div className="container mx-auto px-6 flex flex-wrap lg:flex-nowrap justify-center gap-8 md:gap-10 lg:[&:has(.card-focus:hover)>.card-focus:not(:hover)]:blur-md lg:[&:has(.card-focus:hover)>.card-focus:not(:hover)]:opacity-20 transition-all">
             {bestsellers.map((cake, i) => (
               <motion.div
                 key={cake.id}

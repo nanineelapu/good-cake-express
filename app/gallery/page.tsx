@@ -10,7 +10,6 @@ const galleryItems = [
   { id: 1, title: "Velvet Crimson Draft", category: "Specialty", colSpan: "lg:col-span-4", rowSpan: "lg:row-span-2", url: "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?q=80&w=1000&auto=format&fit=crop" },
   { id: 2, title: "Noir Chocolate Arch", category: "Bento", colSpan: "lg:col-span-3", rowSpan: "lg:row-span-1", url: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1000&auto=format&fit=crop" },
   { id: 3, title: "Ivory Silk Custom", category: "Wedding", colSpan: "lg:col-span-5", rowSpan: "lg:row-span-2", url: "https://images.unsplash.com/photo-1535141192574-5d4897c12636?q=80&w=1000&auto=format&fit=crop" },
-  { id: 4, title: "PU Campus Savories", category: "Snacks", colSpan: "lg:col-span-3", rowSpan: "lg:row-span-2", url: "https://images.unsplash.com/photo-1555507036-3103b140926a?q=80&w=1000&auto=format&fit=crop" },
   { id: 5, title: "Minimalist Matcha", category: "Bento", colSpan: "lg:col-span-2", rowSpan: "lg:row-span-1", url: "https://images.unsplash.com/photo-1519340241574-2cec6aef0c01?q=80&w=1000&auto=format&fit=crop" },
   { id: 6, title: "Dusted Gold Petite", category: "Specialty", colSpan: "lg:col-span-2", rowSpan: "lg:row-span-2", url: "https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?q=80&w=1000&auto=format&fit=crop" },
   { id: 7, title: "Sector 09 Signature", category: "Specialty", colSpan: "lg:col-span-5", rowSpan: "lg:row-span-1", url: "https://images.unsplash.com/photo-1621303837174-89787a7d4729?q=80&w=1000&auto=format&fit=crop" },
@@ -46,24 +45,24 @@ export default function GalleryPage() {
           style={{ backgroundImage: `radial-gradient(circle at 1px 1px, black 1px, transparent 0)`, backgroundSize: '30px 30px' }} />
       </div>
 
-      <main className="container mx-auto px-6 relative z-10 pt-32">
+      <main className="container mx-auto px-6 relative z-10 pt-32 md:pt-40">
 
         {/* HEADER: Complex Split Header */}
-        <div className="grid lg:grid-cols-12 gap-8 md:gap-10 mb-16 md:mb-32 items-end">
+        <div className="grid lg:grid-cols-12 gap-8 md:gap-10 mb-12 md:mb-32 items-end">
           <div className="lg:col-span-8">
             <div className="flex items-center gap-4 mb-6 md:mb-8">
-              <div className="h-px w-16 md:w-20 bg-primary" />
-              <span className="text-[9px] md:text-[10px] font-mono font-black text-text/30 uppercase tracking-[0.5em]">The Visual Database // 2.0.4</span>
+              <div className="h-px w-12 md:w-20 bg-primary" />
+              <span className="text-[9px] md:text-[10px] font-mono font-black text-text/30 uppercase tracking-[0.4em] md:tracking-[0.5em]">The Visual Database // 2.0.4</span>
             </div>
-            <h1 className="text-5xl md:text-[10vw] font-display font-black leading-[0.8] tracking-tighter uppercase italic">
+            <h1 className="text-4xl md:text-[8vw] lg:text-[10vw] font-display font-black leading-[0.8] tracking-tighter uppercase italic">
               GALLERY <br /> <span className="text-primary not-italic">REVEALS.</span>
             </h1>
           </div>
 
           <div className="lg:col-span-4 pb-4">
-            <div className="p-8 bg-[#FBFBFB] border border-black/5 rounded-[2.5rem] relative overflow-hidden group">
+            <div className="p-6 md:p-8 bg-[#FBFBFB] border border-black/5 rounded-4xl md:rounded-[2.5rem] relative overflow-hidden group">
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors" />
-              <p className="text-xs italic font-medium text-text/60 leading-relaxed relative z-10">
+              <p className="text-[11px] md:text-xs italic font-medium text-text/60 leading-relaxed relative z-10">
                 Sifting through Chandigarh's most elite eggless commissions. Each record represents a verified technical dispatch.
               </p>
               <div className="mt-6 flex items-center gap-3">
@@ -80,8 +79,8 @@ export default function GalleryPage() {
           </div>
         </div>
 
-        {/* CATEGORY SELECTOR (Kinetic Bubbles) */}
-        <div className="flex flex-wrap items-center gap-2 md:gap-3 mb-12 md:mb-20 bg-white/60 backdrop-blur-xl p-3 md:p-4 rounded-4xl md:rounded-full border border-black/5 sticky top-24 md:top-32 z-50 w-full md:w-fit overflow-x-auto scrollbar-none">
+        {/* CATEGORY SELECTOR (Horizontal Scroll on Mobile) */}
+        <div className="flex flex-nowrap md:flex-wrap items-center gap-2 md:gap-3 mb-12 md:mb-20 bg-white/60 backdrop-blur-xl p-3 md:p-4 rounded-3xl md:rounded-full border border-black/5 sticky top-24 md:top-32 z-50 w-full md:w-fit overflow-x-auto no-scrollbar">
           {categories.map((cat) => (
             <button
               key={cat}
@@ -97,49 +96,49 @@ export default function GalleryPage() {
         </div>
 
         {/* THE COMPLEX GRID: Staggered Bento-scattering */}
-        <div className="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-12 gap-6 md:gap-8 auto-rows-[250px] md:auto-rows-[180px]">
+        <div className="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-12 gap-6 md:gap-8 auto-rows-[300px] md:auto-rows-[180px]">
           <AnimatePresence mode='popLayout'>
             {filteredItems.map((item, idx) => (
               <motion.div
                 key={item.id}
                 layout
-                initial={{ opacity: 0, y: 100 }}
+                initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.05, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                className={`relative rounded-[3rem] overflow-hidden group cursor-none ${item.colSpan} ${item.rowSpan}`}
+                className={`relative rounded-[2.5rem] md:rounded-[3rem] overflow-hidden group cursor-pointer ${item.colSpan} ${item.rowSpan}`}
                 onClick={() => setSelectedImage(item)}
               >
                 <motion.img
                   src={item.url}
                   alt={item.title}
-                  className="w-full h-full object-cover grayscale-40 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-all duration-1000"
                 />
 
-                {/* COMPLEX OVERLAY: Glitch + Data */}
-                <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-all duration-500 p-6 md:p-10 flex flex-col justify-between backdrop-blur-xs">
+                {/* DYNAMIC OVERLAY: Gradient for brightness + data */}
+                <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/20 to-transparent lg:opacity-0 group-hover:opacity-100 transition-all duration-500 p-6 md:p-10 flex flex-col justify-between">
                   <div className="flex justify-between items-start">
                     <div className="flex flex-col gap-1">
-                      <span className="text-primary text-[7px] md:text-[8px] font-mono font-black tracking-[0.5em] uppercase">Security_Verified</span>
-                      <div className="w-4 h-4 text-white/40"><ShieldAlert size={14} /></div>
+                      <span className="text-secondary text-[7px] md:text-[8px] font-mono font-black tracking-[0.5em] uppercase drop-shadow-sm">Security_Verified</span>
+                      <div className="w-4 h-4 text-white/60"><ShieldAlert size={14} /></div>
                     </div>
-                    <div className="px-3 py-1.5 md:px-4 md:py-2 border border-white/10 rounded-full font-mono text-[8px] md:text-[9px] text-white/50 uppercase tracking-widest">
+                    <div className="px-3 py-1.5 md:px-4 md:py-2 bg-black/20 backdrop-blur-md border border-white/10 rounded-full font-mono text-[8px] md:text-[9px] text-white/80 uppercase tracking-widest">
                       S_ARCH {idx + 1}04
                     </div>
                   </div>
 
-                  <div className="flex flex-col gap-3 md:gap-4">
-                    <h3 className="text-2xl md:text-4xl font-display font-black text-white uppercase italic tracking-tighter leading-none">
+                  <div className="flex flex-col gap-2 md:gap-4">
+                    <h3 className="text-xl md:text-4xl font-display font-black text-white uppercase italic tracking-tighter leading-none drop-shadow-lg">
                       {item.title}
                     </h3>
-                    <div className="flex items-center gap-3 md:gap-4 text-white/40 group/btn">
-                      <span className="text-[10px] font-mono font-black uppercase tracking-widest">Access Full Metrics</span>
-                      <div className="w-8 h-px bg-primary group-hover/btn:w-20 transition-all duration-500" />
+                    <div className="flex items-center gap-3 md:gap-4 text-white/60 group/btn">
+                      <span className="text-[10px] font-mono font-black uppercase tracking-widest">{activeCategory === "All" ? item.category : "Full Metrics"}</span>
+                      <div className="w-8 h-px bg-primary group-hover/btn:w-20 transition-all duration-500 shadow-[0_0_8px_rgba(192,24,42,1)]" />
                     </div>
                   </div>
 
                   {/* Scanning Red Line */}
-                  <div className="absolute top-0 left-0 w-full h-[2px] bg-primary/40 shadow-[0_0_15px_rgba(192,24,42,0.5)] -translate-y-full group-hover:animate-scan" />
+                  <div className="absolute top-0 left-0 w-full h-[2px] bg-primary/40 shadow-[0_0_15px_rgba(192,24,42,0.5)] -translate-y-full group-hover:animate-scan hidden md:block" />
                 </div>
               </motion.div>
             ))}
@@ -147,18 +146,19 @@ export default function GalleryPage() {
         </div>
 
         {/* FOOTER: Complex Text Block */}
-        <section className="mt-40 md:mt-60 text-center relative">
+        <section className="mt-32 md:mt-60 text-center relative">
           <div className="absolute -top-20 md:-top-40 left-1/2 -translate-x-1/2 w-[60vw] h-[60vw] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
           <div className="inline-flex items-center gap-3 md:gap-6 mb-8 md:mb-12">
             <Instagram size={20} className="text-primary" />
             <span className="text-[9px] md:text-[10px] font-mono font-black text-text/20 uppercase tracking-[0.3em] md:tracking-[1em] whitespace-nowrap">India_Pure_Bake_Unit</span>
           </div>
-          <h2 className="text-4xl md:text-[8vw] font-display font-black uppercase italic tracking-tighter leading-[0.85] mb-12 md:mb-20 px-4">
+          <h2 className="text-3xl md:text-[8vw] font-display font-black uppercase italic tracking-tighter leading-[0.85] mb-12 md:mb-20 px-4">
             JOIN THE <br /> <span className="text-primary not-italic">ARCHIVE.</span>
           </h2>
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={() => window.open('https://instagram.com/thegoodcakeexpress', '_blank')}
             className="w-full max-w-[320px] md:w-auto px-8 md:px-20 py-6 md:py-8 bg-black text-white rounded-full font-mono font-black text-[10px] md:text-[11px] uppercase tracking-[0.4em] md:tracking-[0.5em] shadow-3xl hover:bg-primary transition-all duration-500"
           >
             @TheGoodCakeExpress

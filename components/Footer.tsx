@@ -130,9 +130,9 @@ export default function Footer() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex flex-col md:flex-row items-center justify-between gap-6 mb-16 pb-12 border-b border-white/5"
+          className="flex flex-col md:flex-row items-center justify-between gap-10 mb-16 pb-12 border-b border-white/5"
         >
-          <div className="flex items-center gap-6">
+          <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8">
             <motion.div
               animate={{ y: [0, -5, 0] }}
               transition={{ duration: 3, repeat: Infinity }}
@@ -149,14 +149,14 @@ export default function Footer() {
               <h2 className="text-2xl md:text-4xl font-display font-bold leading-tight">
                 Experience <span className="text-primary italic">Cake Perfection</span>
               </h2>
-              <p className="text-white/40 text-sm mt-1">Handcrafted with 100% pure passion and ingredients.</p>
+              <p className="text-white/40 text-sm mt-1 max-w-[280px] md:max-w-none mx-auto md:mx-0 leading-relaxed">Handcrafted with 100% pure passion and ingredients.</p>
             </div>
           </div>
           <Link
             href="/order"
-            className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full font-medium text-sm transition-all transform hover:scale-105 shadow-lg shadow-primary/20 flex items-center gap-2"
+            className="w-full md:w-auto bg-primary hover:bg-primary/90 text-white px-10 py-4 rounded-full font-bold text-sm transition-all transform hover:scale-105 shadow-lg shadow-primary/20 flex items-center justify-center gap-3"
           >
-            Dispatch Now <Send size={14} />
+            Dispatch Now <Send size={16} />
           </Link>
         </motion.div>
 
