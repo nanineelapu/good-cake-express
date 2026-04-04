@@ -115,7 +115,7 @@ export default function MenuPage() {
   const filteredItems = menuItems.filter(item => item.category === activeCategory);
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-white text-text overflow-x-hidden relative">
+    <div ref={containerRef} className="min-h-screen bg-white text-text pt-24 lg:pt-40 pb-40 overflow-hidden relative">
 
       {/* Complex Layout Structure */}
       <div className="flex flex-col lg:flex-row min-h-screen">

@@ -18,7 +18,7 @@ export default function AboutPage() {
   const xLeft = useTransform(scrollYProgress, [0, 0.5], [0, -100]);
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-white text-text overflow-x-hidden pt-32 md:pt-40 relative">
+    <div ref={containerRef} className="min-h-screen bg-white text-text pt-24 lg:pt-40 pb-40 overflow-hidden relative">
 
       {/* Dynamic Background Noise/Spotlight */}
       <div className="fixed inset-0 pointer-events-none">

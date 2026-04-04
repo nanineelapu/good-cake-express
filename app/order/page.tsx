@@ -2,13 +2,12 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
-import { Send, Calendar, Clock, MapPin, Cake, Phone, User, CheckCircle2, ChevronRight, ArrowRight, ShieldCheck, UserCheck } from 'lucide-react';
+import { Calendar, Clock, MapPin, Cake, Phone, User, CheckCircle2, ArrowRight, ShieldCheck, UserCheck } from 'lucide-react';
 
 const cakeTypes = ["Bento Cake", "Specialty Cake", "Snack Box", "Wedding Custom", "Anniversary Special"];
 const sectors = ["Sector 09", "Sector 10", "Sector 11", "Sector 15", "PU Campus", "PEC Campus", "Other TRICITY"];
 
 export default function OrderPage() {
-   const [step, setStep] = useState(1);
    const [formSubmitted, setFormSubmitted] = useState(false);
 
    const [formData, setFormData] = useState({
@@ -21,15 +20,13 @@ export default function OrderPage() {
       message: ""
    });
 
-   const nextStep = () => setStep(prev => prev + 1);
-
    const handleSubmit = (e: React.FormEvent) => {
       e.preventDefault();
       setFormSubmitted(true);
    };
 
    return (
-      <div className="min-h-screen bg-white text-text pt-32 pb-40 overflow-hidden">
+      <div className="min-h-screen bg-white text-text pt-24 lg:pt-40 pb-20 md:pb-40 overflow-hidden relative">
 
          {/* BACKGROUND DECOR (Kinetic) - Hidden on mobile for cleaner UI */}
          <div className="fixed inset-0 pointer-events-none opacity-[0.02] select-none hidden md:block">
@@ -38,16 +35,16 @@ export default function OrderPage() {
 
          <main className="container mx-auto px-6 relative z-10">
 
-            <div className="max-w-6xl mx-auto grid lg:grid-cols-12 gap-20">
+            <div className="max-w-6xl mx-auto grid lg:grid-cols-12 gap-8 md:gap-20">
 
                {/* LEFT: THE TERMINAL (Form) */}
                <div className="lg:col-span-7">
-                  <div className="flex flex-col gap-6 mb-12">
+                  <div className="flex flex-col gap-4 md:gap-6 mb-10 md:mb-12">
                      <div className="flex items-center gap-4">
-                        <div className="h-px w-20 bg-primary" />
-                        <span className="text-[10px] font-mono font-black uppercase tracking-[0.5em] text-primary">Order_Protocol_Initiated</span>
+                        <div className="h-px w-10 md:w-20 bg-primary" />
+                        <span className="text-[8px] md:text-[10px] font-mono font-black uppercase tracking-[0.4em] md:tracking-[0.5em] text-primary">Order_Protocol_Initiated</span>
                      </div>
-                     <h1 className="text-6xl md:text-8xl font-display font-black uppercase italic tracking-tighter leading-[0.8]">
+                     <h1 className="text-4xl md:text-8xl font-display font-black uppercase italic tracking-tighter leading-[0.9] md:leading-[0.8]">
                         INITIATE <br /> <span className="text-primary not-italic">DISPATCH.</span>
                      </h1>
                   </div>
@@ -60,34 +57,34 @@ export default function OrderPage() {
                            animate={{ opacity: 1, x: 0 }}
                            exit={{ opacity: 0, x: 20 }}
                            onSubmit={handleSubmit}
-                           className="flex flex-col gap-10"
+                           className="flex flex-col gap-6 md:gap-10"
                         >
                            {/* Segment 01: Identity */}
-                           <div className="flex flex-col gap-6 md:gap-8 p-6 md:p-10 bg-[#F9F9F9] border border-black/5 rounded-4xl md:rounded-[3rem]">
-                              <span className="text-[10px] font-mono font-black uppercase tracking-widest text-text/20">Segment_01 // Identity</span>
-                              <div className="grid md:grid-cols-2 gap-6">
-                                 <div className="flex flex-col gap-3">
-                                    <label className="text-[10px] font-mono font-black uppercase tracking-widest text-text/40 ml-4">Full Name</label>
+                           <div className="flex flex-col gap-5 md:gap-8 p-5 md:p-10 bg-[#F9F9F9] border border-black/5 rounded-[2rem] md:rounded-[3rem]">
+                              <span className="text-[9px] md:text-[10px] font-mono font-black uppercase tracking-widest text-text/20">Segment_01 // Identity</span>
+                              <div className="grid md:grid-cols-2 gap-5 md:gap-6">
+                                 <div className="flex flex-col gap-2.5">
+                                    <label className="text-[9px] md:text-[10px] font-mono font-black uppercase tracking-widest text-text/40 ml-4">Full Name</label>
                                     <div className="relative group">
-                                       <User className="absolute left-6 top-1/2 -translate-y-1/2 text-text/20 group-focus-within:text-primary transition-colors" size={18} />
+                                       <User className="absolute left-5 md:left-6 top-1/2 -translate-y-1/2 text-text/20 group-focus-within:text-primary transition-colors" size={16} />
                                        <input
                                           type="text"
                                           required
-                                          className="w-full bg-white border border-black/5 rounded-full py-4 pl-16 pr-6 text-sm font-medium focus:border-primary focus:ring-0 transition-all outline-none"
+                                          className="w-full bg-white border border-black/5 rounded-full py-3.5 md:py-4 pl-12 md:pl-16 pr-6 text-sm font-medium focus:border-primary focus:ring-0 transition-all outline-none"
                                           placeholder="Recipient Name"
                                           value={formData.name}
                                           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                        />
                                     </div>
                                  </div>
-                                 <div className="flex flex-col gap-3">
-                                    <label className="text-[10px] font-mono font-black uppercase tracking-widest text-text/40 ml-4">Contact Logic</label>
+                                 <div className="flex flex-col gap-2.5">
+                                    <label className="text-[9px] md:text-[10px] font-mono font-black uppercase tracking-widest text-text/40 ml-4">Contact Logic</label>
                                     <div className="relative group">
-                                       <Phone className="absolute left-6 top-1/2 -translate-y-1/2 text-text/20 group-focus-within:text-primary transition-colors" size={18} />
+                                       <Phone className="absolute left-5 md:left-6 top-1/2 -translate-y-1/2 text-text/20 group-focus-within:text-primary transition-colors" size={16} />
                                        <input
                                           type="tel"
                                           required
-                                          className="w-full bg-white border border-black/5 rounded-full py-4 pl-16 pr-6 text-sm font-medium focus:border-primary focus:ring-0 transition-all outline-none"
+                                          className="w-full bg-white border border-black/5 rounded-full py-3.5 md:py-4 pl-12 md:pl-16 pr-6 text-sm font-medium focus:border-primary focus:ring-0 transition-all outline-none"
                                           placeholder="+91 MOBILE"
                                           value={formData.phone}
                                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
@@ -98,15 +95,15 @@ export default function OrderPage() {
                            </div>
 
                            {/* Segment 02: Unit Spec */}
-                           <div className="flex flex-col gap-6 md:gap-8 p-6 md:p-10 bg-[#F9F9F9] border border-black/5 rounded-4xl md:rounded-[3rem]">
-                              <span className="text-[10px] font-mono font-black uppercase tracking-widest text-text/20">Segment_02 // Unit Selection</span>
-                              <div className="grid md:grid-cols-2 gap-6">
-                                 <div className="flex flex-col gap-3">
-                                    <label className="text-[10px] font-mono font-black uppercase tracking-widest text-text/40 ml-4">Cake Category</label>
+                           <div className="flex flex-col gap-5 md:gap-8 p-5 md:p-10 bg-[#F9F9F9] border border-black/5 rounded-[2rem] md:rounded-[3rem]">
+                              <span className="text-[9px] md:text-[10px] font-mono font-black uppercase tracking-widest text-text/20">Segment_02 // Unit Selection</span>
+                              <div className="grid md:grid-cols-2 gap-5 md:gap-6">
+                                 <div className="flex flex-col gap-2.5">
+                                    <label className="text-[9px] md:text-[10px] font-mono font-black uppercase tracking-widest text-text/40 ml-4">Cake Category</label>
                                     <div className="relative">
-                                       <Cake className="absolute left-6 top-1/2 -translate-y-1/2 text-text/20" size={18} />
+                                       <Cake className="absolute left-5 md:left-6 top-1/2 -translate-y-1/2 text-text/20" size={16} />
                                        <select
-                                          className="w-full bg-white border border-black/5 rounded-full py-4 pl-16 pr-6 text-sm font-medium appearance-none outline-none focus:border-primary"
+                                          className="w-full bg-white border border-black/5 rounded-full py-3.5 md:py-4 pl-12 md:pl-16 pr-8 text-sm font-medium appearance-none outline-none focus:border-primary"
                                           value={formData.cakeType}
                                           onChange={(e) => setFormData({ ...formData, cakeType: e.target.value })}
                                        >
@@ -114,12 +111,12 @@ export default function OrderPage() {
                                        </select>
                                     </div>
                                  </div>
-                                 <div className="flex flex-col gap-3">
-                                    <label className="text-[10px] font-mono font-black uppercase tracking-widest text-text/40 ml-4">Target Sector</label>
+                                 <div className="flex flex-col gap-2.5">
+                                    <label className="text-[9px] md:text-[10px] font-mono font-black uppercase tracking-widest text-text/40 ml-4">Target Sector</label>
                                     <div className="relative">
-                                       <MapPin className="absolute left-6 top-1/2 -translate-y-1/2 text-text/20" size={18} />
+                                       <MapPin className="absolute left-5 md:left-6 top-1/2 -translate-y-1/2 text-text/20" size={16} />
                                        <select
-                                          className="w-full bg-white border border-black/5 rounded-full py-4 pl-16 pr-6 text-sm font-medium appearance-none outline-none focus:border-primary"
+                                          className="w-full bg-white border border-black/5 rounded-full py-3.5 md:py-4 pl-12 md:pl-16 pr-8 text-sm font-medium appearance-none outline-none focus:border-primary"
                                           value={formData.sector}
                                           onChange={(e) => setFormData({ ...formData, sector: e.target.value })}
                                        >
@@ -131,28 +128,28 @@ export default function OrderPage() {
                            </div>
 
                            {/* Segment 03: Temporal */}
-                           <div className="flex flex-col gap-6 md:gap-8 p-6 md:p-10 bg-[#F9F9F9] border border-black/5 rounded-4xl md:rounded-[3rem]">
-                              <span className="text-[10px] font-mono font-black uppercase tracking-widest text-text/20">Segment_03 // Temporal Data</span>
-                              <div className="grid md:grid-cols-2 gap-6">
-                                 <div className="flex flex-col gap-3">
-                                    <label className="text-[10px] font-mono font-black uppercase tracking-widest text-text/40 ml-4">Arrival Date</label>
+                           <div className="flex flex-col gap-5 md:gap-8 p-5 md:p-10 bg-[#F9F9F9] border border-black/5 rounded-[2rem] md:rounded-[3rem]">
+                              <span className="text-[9px] md:text-[10px] font-mono font-black uppercase tracking-widest text-text/20">Segment_03 // Temporal Data</span>
+                              <div className="grid md:grid-cols-2 gap-5 md:gap-6">
+                                 <div className="flex flex-col gap-2.5">
+                                    <label className="text-[9px] md:text-[10px] font-mono font-black uppercase tracking-widest text-text/40 ml-4">Arrival Date</label>
                                     <div className="relative group">
-                                       <Calendar className="absolute left-6 top-1/2 -translate-y-1/2 text-text/20 group-focus-within:text-primary transition-colors" size={18} />
+                                       <Calendar className="absolute left-5 md:left-6 top-1/2 -translate-y-1/2 text-text/20 group-focus-within:text-primary transition-colors" size={16} />
                                        <input
                                           type="date"
                                           required
-                                          className="w-full bg-white border border-black/5 rounded-full py-4 pl-16 pr-6 text-sm font-medium outline-none focus:border-primary"
+                                          className="w-full bg-white border border-black/5 rounded-full py-3.5 md:py-4 pl-12 md:pl-16 pr-6 text-sm font-medium outline-none focus:border-primary"
                                           value={formData.date}
                                           onChange={(e) => setFormData({ ...formData, date: e.target.value })}
                                        />
                                     </div>
                                  </div>
-                                 <div className="flex flex-col gap-3">
-                                    <label className="text-[10px] font-mono font-black uppercase tracking-widest text-text/40 ml-4">Dispatch Slot</label>
+                                 <div className="flex flex-col gap-2.5">
+                                    <label className="text-[9px] md:text-[10px] font-mono font-black uppercase tracking-widest text-text/40 ml-4">Dispatch Slot</label>
                                     <div className="relative">
-                                       <Clock className="absolute left-6 top-1/2 -translate-y-1/2 text-text/20" size={18} />
+                                       <Clock className="absolute left-5 md:left-6 top-1/2 -translate-y-1/2 text-text/20" size={16} />
                                        <select
-                                          className="w-full bg-white border border-black/5 rounded-full py-4 pl-16 pr-6 text-sm font-medium appearance-none outline-none focus:border-primary"
+                                          className="w-full bg-white border border-black/5 rounded-full py-3.5 md:py-4 pl-12 md:pl-16 pr-8 text-sm font-medium appearance-none outline-none focus:border-primary"
                                           value={formData.time}
                                           onChange={(e) => setFormData({ ...formData, time: e.target.value })}
                                        >
@@ -168,28 +165,28 @@ export default function OrderPage() {
 
                            <button
                               type="submit"
-                              className="w-full py-5 md:py-8 bg-black text-white rounded-full font-mono font-black text-[10px] md:text-xs uppercase tracking-[0.2em] md:tracking-[0.6em] hover:bg-primary transition-all shadow-3xl flex items-center justify-center gap-4 md:gap-6 group"
+                              className="w-full py-5 md:py-8 bg-black text-white rounded-full font-mono font-black text-[10px] md:text-xs uppercase tracking-[0.2em] md:tracking-[0.6em] hover:bg-primary transition-all shadow-3xl flex items-center justify-center gap-4 md:gap-6 group mt-4"
                            >
                               EXECUTE DISPATCH PROTOCOL
-                              <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
+                              <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
                            </button>
                         </motion.form>
                      ) : (
                         <motion.div
                            initial={{ scale: 0.9, opacity: 0 }}
                            animate={{ scale: 1, opacity: 1 }}
-                           className="flex flex-col items-center text-center p-10 md:p-20 bg-primary/5 rounded-[3rem] md:rounded-[4rem] border-2 border-primary/20"
+                           className="flex flex-col items-center text-center p-8 md:p-20 bg-primary/5 rounded-[2.5rem] md:rounded-[4rem] border-2 border-primary/20"
                         >
-                           <CheckCircle2 size={80} className="text-primary mb-10" />
-                           <h2 className="text-5xl font-display font-black uppercase italic tracking-tighter mb-4">SUCCESSFUL <br /> DISPATCH.</h2>
-                           <p className="text-sm font-mono font-bold uppercase tracking-widest text-text/60 leading-loose">
+                           <CheckCircle2 size={56} className="text-primary mb-8 md:mb-10" />
+                           <h2 className="text-3xl md:text-5xl font-display font-black uppercase italic tracking-tighter mb-4 leading-none">SUCCESSFUL <br /> DISPATCH.</h2>
+                           <p className="text-[10px] md:text-sm font-mono font-bold uppercase tracking-widest text-text/60 leading-loose">
                               ORDER SERIAL: TGC-2024-XR9<br />
                               RECIPIENT: {formData.name}<br />
                               ESTIMATED SYNC: {formData.date}
                            </p>
                            <button
                               onClick={() => setFormSubmitted(false)}
-                              className="mt-12 px-10 py-4 bg-black text-white rounded-full font-mono font-black text-[10px] uppercase tracking-widest"
+                              className="mt-8 md:mt-12 px-10 py-4 md:py-5 bg-black text-white rounded-full font-mono font-black text-[10px] md:text-[11px] uppercase tracking-widest hover:bg-primary transition-all"
                            >
                               INITIATE NEW PROTOCOL
                            </button>
@@ -232,7 +229,7 @@ export default function OrderPage() {
 
                         <div className="p-8 bg-black rounded-3xl mt-6 flex flex-col gap-4">
                            <div className="flex justify-between items-center text-white/40">
-                              <span className="text-[9px] font-mono font-black uppercase tracking-widest">Base Dispatch Quote</span>
+                                <span className="text-[9px] font-mono font-black uppercase tracking-widest">Base Dispatch Quote</span>
                               <span className="text-[9px] font-mono font-black uppercase italic tracking-widest">v.01</span>
                            </div>
                            <div className="flex justify-between items-center text-white">

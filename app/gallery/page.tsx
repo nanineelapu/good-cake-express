@@ -31,7 +31,7 @@ export default function GalleryPage() {
     : galleryItems.filter(item => item.category === activeCategory);
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-white text-text pb-40 overflow-hidden relative">
+    <div ref={containerRef} className="min-h-screen bg-white text-text pt-24 lg:pt-40 pb-40 overflow-hidden relative">
 
       {/* KINETIC WATERMARKS (Complicated Layering) */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
@@ -45,7 +45,7 @@ export default function GalleryPage() {
           style={{ backgroundImage: `radial-gradient(circle at 1px 1px, black 1px, transparent 0)`, backgroundSize: '30px 30px' }} />
       </div>
 
-      <main className="container mx-auto px-6 relative z-10 pt-32 md:pt-40">
+      <main className="container mx-auto px-6 relative z-10">
 
         {/* HEADER: Complex Split Header */}
         <div className="grid lg:grid-cols-12 gap-8 md:gap-10 mb-12 md:mb-32 items-end">

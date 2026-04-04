@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
+import SmoothScroll from "@/components/SmoothScroll";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -32,8 +33,6 @@ export const metadata: Metadata = {
   keywords: "eggless cake, Chandigarh bakery, custom cakes, PU Chandigarh, The Good Cake Express",
 };
 
-import SmoothScroll from "@/components/SmoothScroll";
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -57,4 +56,3 @@ export default function RootLayout({
     </html>
   );
 }
-
