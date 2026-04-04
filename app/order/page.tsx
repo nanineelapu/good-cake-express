@@ -31,8 +31,8 @@ export default function OrderPage() {
    return (
       <div className="min-h-screen bg-white text-text pt-32 pb-40 overflow-hidden">
 
-         {/* BACKGROUND DECOR (Kinetic) */}
-         <div className="fixed inset-0 pointer-events-none opacity-[0.02] select-none">
+         {/* BACKGROUND DECOR (Kinetic) - Hidden on mobile for cleaner UI */}
+         <div className="fixed inset-0 pointer-events-none opacity-[0.02] select-none hidden md:block">
             <div className="absolute top-1/2 left-0 -translate-y-1/2 text-[30vw] font-display font-black leading-none uppercase italic -translate-x-20">DISPATCH</div>
          </div>
 
@@ -63,7 +63,7 @@ export default function OrderPage() {
                            className="flex flex-col gap-10"
                         >
                            {/* Segment 01: Identity */}
-                           <div className="flex flex-col gap-8 p-10 bg-[#F9F9F9] border border-black/5 rounded-[3rem]">
+                           <div className="flex flex-col gap-6 md:gap-8 p-6 md:p-10 bg-[#F9F9F9] border border-black/5 rounded-4xl md:rounded-[3rem]">
                               <span className="text-[10px] font-mono font-black uppercase tracking-widest text-text/20">Segment_01 // Identity</span>
                               <div className="grid md:grid-cols-2 gap-6">
                                  <div className="flex flex-col gap-3">
@@ -98,7 +98,7 @@ export default function OrderPage() {
                            </div>
 
                            {/* Segment 02: Unit Spec */}
-                           <div className="flex flex-col gap-8 p-10 bg-[#F9F9F9] border border-black/5 rounded-[3rem]">
+                           <div className="flex flex-col gap-6 md:gap-8 p-6 md:p-10 bg-[#F9F9F9] border border-black/5 rounded-4xl md:rounded-[3rem]">
                               <span className="text-[10px] font-mono font-black uppercase tracking-widest text-text/20">Segment_02 // Unit Selection</span>
                               <div className="grid md:grid-cols-2 gap-6">
                                  <div className="flex flex-col gap-3">
@@ -131,7 +131,7 @@ export default function OrderPage() {
                            </div>
 
                            {/* Segment 03: Temporal */}
-                           <div className="flex flex-col gap-8 p-10 bg-[#F9F9F9] border border-black/5 rounded-[3rem]">
+                           <div className="flex flex-col gap-6 md:gap-8 p-6 md:p-10 bg-[#F9F9F9] border border-black/5 rounded-4xl md:rounded-[3rem]">
                               <span className="text-[10px] font-mono font-black uppercase tracking-widest text-text/20">Segment_03 // Temporal Data</span>
                               <div className="grid md:grid-cols-2 gap-6">
                                  <div className="flex flex-col gap-3">
@@ -178,7 +178,7 @@ export default function OrderPage() {
                         <motion.div
                            initial={{ scale: 0.9, opacity: 0 }}
                            animate={{ scale: 1, opacity: 1 }}
-                           className="flex flex-col items-center text-center p-20 bg-primary/5 rounded-[4rem] border-2 border-primary/20"
+                           className="flex flex-col items-center text-center p-10 md:p-20 bg-primary/5 rounded-[3rem] md:rounded-[4rem] border-2 border-primary/20"
                         >
                            <CheckCircle2 size={80} className="text-primary mb-10" />
                            <h2 className="text-5xl font-display font-black uppercase italic tracking-tighter mb-4">SUCCESSFUL <br /> DISPATCH.</h2>
@@ -198,8 +198,8 @@ export default function OrderPage() {
                   </AnimatePresence>
                </div>
 
-               {/* RIGHT: THE SUMMARY (Technical Side) */}
-               <div className="lg:col-span-5 h-fit lg:sticky lg:top-40">
+               {/* RIGHT: THE SUMMARY (Technical Side) - Hidden on mobile */}
+               <div className="lg:col-span-5 h-fit lg:sticky lg:top-40 hidden lg:block">
                   <div className="p-10 border border-black/5 rounded-[4rem] bg-[#FBFBFB] relative overflow-hidden">
                      {/* Scanner decorative line */}
                      <div className="absolute top-0 left-0 w-full h-px bg-primary/30 animate-scan" />

@@ -125,31 +125,31 @@ export default function ReviewsPage() {
                            animate={{ opacity: 1, x: 0, scale: 1 }}
                            exit={{ opacity: 0, x: -100, scale: 0.9 }}
                            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                           className="w-full max-w-2xl bg-[#FBFBFB] border border-black/5 rounded-[4rem] p-12 md:p-20 shadow-xl relative overflow-hidden group"
+                           className="w-full max-w-2xl bg-[#FBFBFB] border border-black/5 rounded-[2.5rem] md:rounded-[4rem] p-8 md:p-20 shadow-xl relative overflow-hidden group"
                         >
                            {/* Decorative Shield */}
                            <div className="absolute -top-10 -right-10 text-primary/5">
                               <UserCheck size={300} />
                            </div>
 
-                           <div className="flex flex-col gap-12 relative z-10">
+                           <div className="flex flex-col gap-8 md:gap-12 relative z-10">
                               <div className="flex justify-between items-start">
-                                 <div className="flex flex-col gap-2">
-                                    <span className="text-primary text-[10px] font-mono font-black uppercase tracking-[0.5em]">{reviewsData[index].platform} UNIT</span>
+                                 <div className="flex flex-col gap-1 md:gap-2">
+                                    <span className="text-primary text-[9px] md:text-[10px] font-mono font-black uppercase tracking-[0.5em]">{reviewsData[index].platform} UNIT</span>
                                     <div className="flex gap-1">
                                        {[...Array(reviewsData[index].rating)].map((_, i) => (
-                                          <Star key={i} size={16} className="fill-primary text-primary" />
+                                          <Star key={i} size={14} className="md:w-4 md:h-4 fill-primary text-primary" />
                                        ))}
                                     </div>
                                  </div>
-                                 <span className="text-[10px] font-mono font-black text-text/20 uppercase tracking-widest">{reviewsData[index].date}</span>
+                                 <span className="text-[9px] md:text-[10px] font-mono font-black text-text/20 uppercase tracking-widest">{reviewsData[index].date}</span>
                               </div>
 
-                              <p className="text-2xl md:text-4xl font-display font-black leading-[1.2] italic text-text uppercase tracking-tight">
+                              <p className="text-xl md:text-4xl font-display font-black leading-[1.2] italic text-text uppercase tracking-tight">
                                  "{reviewsData[index].text}"
                               </p>
 
-                              <div className="flex items-center gap-6 pt-12 border-t border-black/5">
+                              <div className="flex items-center gap-4 md:gap-6 pt-8 md:pt-12 border-t border-black/5">
                                  <div className="w-14 h-14 rounded-full bg-white border border-black/5 flex items-center justify-center text-primary font-display font-black text-xl italic">
                                     {reviewsData[index].name[0]}
                                  </div>

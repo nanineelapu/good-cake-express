@@ -149,17 +149,17 @@ export default function GalleryPage() {
         {/* FOOTER: Complex Text Block */}
         <section className="mt-40 md:mt-60 text-center relative">
           <div className="absolute -top-20 md:-top-40 left-1/2 -translate-x-1/2 w-[60vw] h-[60vw] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
-          <div className="inline-flex items-center gap-4 md:gap-6 mb-8 md:mb-12">
+          <div className="inline-flex items-center gap-3 md:gap-6 mb-8 md:mb-12">
             <Instagram size={20} className="text-primary" />
-            <span className="text-[10px] font-mono font-black text-text/20 uppercase tracking-[0.6em] md:tracking-[1em]">India_Pure_Bake_Unit</span>
+            <span className="text-[9px] md:text-[10px] font-mono font-black text-text/20 uppercase tracking-[0.3em] md:tracking-[1em] whitespace-nowrap">India_Pure_Bake_Unit</span>
           </div>
-          <h2 className="text-4xl md:text-[8vw] font-display font-black uppercase italic tracking-tighter leading-[0.85] mb-12 md:mb-20">
+          <h2 className="text-4xl md:text-[8vw] font-display font-black uppercase italic tracking-tighter leading-[0.85] mb-12 md:mb-20 px-4">
             JOIN THE <br /> <span className="text-primary not-italic">ARCHIVE.</span>
           </h2>
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-20 py-8 bg-black text-white rounded-full font-mono font-black text-[11px] uppercase tracking-[0.5em] shadow-3xl hover:bg-primary transition-all duration-500"
+            className="w-full max-w-[320px] md:w-auto px-8 md:px-20 py-6 md:py-8 bg-black text-white rounded-full font-mono font-black text-[10px] md:text-[11px] uppercase tracking-[0.4em] md:tracking-[0.5em] shadow-3xl hover:bg-primary transition-all duration-500"
           >
             @TheGoodCakeExpress
           </motion.button>

@@ -296,7 +296,7 @@ export default function Home() {
 
       {/* CTA: Asymmetrical Dispatch Console */}
       <section className="py-16 md:py-24 px-6 relative bg-cream overflow-hidden">
-        <div className="container mx-auto bg-primary rounded-[3rem] overflow-hidden relative shadow-[0_60px_100px_rgba(192,24,42,0.2)] border border-white/10 group/cta">
+        <div className="container mx-auto bg-black rounded-[3rem] overflow-hidden relative shadow-[0_60px_100px_rgba(0,0,0,0.2)] border border-white/10 group/cta">
           {/* Sculptural Background */}
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10 pointer-events-none" />
           <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-white/5 rounded-full blur-[100px] group-hover:scale-110 transition-transform duration-1000" />
@@ -312,7 +312,7 @@ export default function Home() {
               </div>
               <h2 className="text-3xl md:text-8xl font-display font-black text-white leading-[0.85] tracking-tighter mb-8 md:mb-10 wrap-break-word uppercase">
                 SECURE_THE<br className="md:block" />
-                <span className="text-white/20 group-hover/cta:text-black transition-colors duration-700">SIGNATURE_SLICE</span>
+                <span className="text-white/20 group-hover/cta:text-primary transition-colors duration-700">SIGNATURE_SLICE</span>
               </h2>
             </div>
 

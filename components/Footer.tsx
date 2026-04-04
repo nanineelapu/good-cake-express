@@ -70,7 +70,7 @@ export default function Footer() {
   return (
     <footer
       ref={containerRef}
-      className="relative bg-[#0F0505] text-cream pt-16 pb-8 overflow-hidden"
+      className="relative bg-black text-cream pt-16 pb-8 overflow-hidden"
     >
       {/* Progress Bar */}
       <div className="absolute top-0 left-0 w-full h-[2px] bg-white/5 overflow-hidden">
@@ -89,7 +89,7 @@ export default function Footer() {
       <div className="absolute inset-0 pointer-events-none opacity-10">
         <motion.div
           style={{ y: useTransform(scrollYProgress, [0, 1], [0, -50]) }}
-          className="absolute -top-12 -left-12 w-64 h-64 bg-primary/20 blur-[80px] rounded-full"
+          className="absolute -top-12 -left-12 w-64 h-64 bg-white/5 blur-[80px] rounded-full"
         />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center select-none opacity-[0.02]">
           <span className="text-[12vw] font-display font-black text-white leading-none uppercase tracking-tighter">
@@ -138,7 +138,7 @@ export default function Footer() {
               transition={{ duration: 3, repeat: Infinity }}
               className="w-16 h-16 md:w-20 md:h-20 shrink-0"
             >
-              <svg viewBox="0 0 200 200" fill="none" className="w-full h-full drop-shadow-[0_10px_20px_rgba(192,24,42,0.3)]">
+              <svg viewBox="0 0 200 200" fill="none" className="w-full h-full drop-shadow-[0_10px_20px_rgba(255,255,255,0.05)]">
                 <path d="M40 140C40 128.954 48.9543 120 60 120H140C151.046 120 160 128.954 160 140V160C160 165.523 155.523 170 150 170H50C44.4772 170 40 165.523 40 160V140Z" fill="#C0182A" />
                 <path d="M50 100C50 88.9543 58.9543 80 70 80H130C141.046 80 150 88.9543 150 100V120H50V100Z" fill="#FBF7F2" fillOpacity="0.9" />
                 <circle cx="100" cy="70" r="10" fill="#C0182A" />
