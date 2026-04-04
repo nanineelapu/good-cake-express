@@ -21,7 +21,8 @@ export default function CakeCard({ item }: CakeCardProps) {
           src={item.image}
           alt={item.name}
           fill
-          className="object-cover transition-transform duration-1000 group-hover:scale-110"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 25vw"
+          className="object-cover transition-transform duration-1000 group-hover:scale-110 transform-gpu"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/20 to-transparent opacity-80" />
       </div>

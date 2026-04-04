@@ -42,12 +42,13 @@ function EliteProductCard({ item, index }: any) {
       className="group relative flex flex-col gap-4"
     >
       {/* Precision Stage */}
-      <div className="relative aspect-4/5 rounded-[2.5rem] overflow-hidden bg-[#F0F0F0] border border-black/[0.03] group-hover:border-primary/20 transition-all duration-700 shadow-sm hover:shadow-2xl">
+      <div className="relative aspect-4/5 rounded-[2.5rem] overflow-hidden bg-[#F0F0F0] border border-black/[0.03] group-hover:border-primary/20 transition-all duration-700 shadow-sm hover:shadow-2xl transform-gpu">
         <Image
           src={item.image}
           alt={item.name}
           fill
-          className="object-cover transition-transform duration-[3000ms] group-hover:scale-105 group-hover:rotate-1"
+          sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+          className="object-cover transition-transform duration-[3000ms] group-hover:scale-105 group-hover:rotate-1 transform-gpu"
         />
 
         {/* Elite Corner Tags */}
@@ -120,7 +121,7 @@ export default function MenuPage() {
       <div className="flex flex-col lg:flex-row min-h-screen">
 
         {/* LEFT FIXATION: Architectural Sidebar Navigation (FIXED ON DESKTOP) */}
-        <aside className="lg:sticky lg:top-0 lg:w-1/4 lg:h-screen lg:z-50 bg-white/80 backdrop-blur-md lg:bg-white flex flex-col gap-8 sticky top-[68px] z-30 py-4 lg:py-0 px-4 border-b border-black/5 lg:border-r lg:border-black/5 overflow-hidden">
+        <aside className="lg:sticky lg:top-0 lg:w-1/4 lg:h-screen lg:z-50 bg-white/80 backdrop-blur-md lg:bg-white flex flex-col gap-8 sticky top-[68px] z-30 py-4 lg:py-0 px-4 border-b border-black/5 lg:border-r lg:border-black/5 overflow-hidden transform-gpu will-change-transform">
 
           {/* Subtle Fine Texture */}
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] opacity-[0.03] pointer-events-none" />
@@ -215,7 +216,7 @@ export default function MenuPage() {
           )}
 
           {/* Custom Creation Concept Pod */}
-          <div className="mt-40 relative group overflow-hidden rounded-[3.5rem] bg-[#0A0A0A]">
+          <div className="mt-16 md:mt-40 relative group overflow-hidden rounded-[3.5rem] bg-[#0A0A0A]">
             <div className="absolute inset-0 bg-primary/20 blur-[100px] opacity-10 pointer-events-none" />
             <div className="p-12 md:p-24 flex flex-col gap-10 relative z-10">
               <div className="flex items-center gap-3 px-4 py-2 bg-white/5 border border-white/10 rounded-2xl w-fit">
@@ -247,7 +248,7 @@ export default function MenuPage() {
       </div>
 
       {/* Extreme Bottom Curation */}
-      <footer className="container mx-auto px-6 mt-60 border-t border-white/5 pt-20 flex flex-col md:flex-row items-center justify-between gap-12 text-white/10">
+      <footer className="container mx-auto px-6 mt-20 md:mt-40 border-t border-black/5 pt-10 md:pt-20 flex flex-col md:flex-row items-center justify-between gap-12 text-text/20">
         <div className="flex items-center gap-10">
           <span className="text-[10px] font-mono font-black uppercase tracking-[1em]">Est.2024</span>
           <span className="text-[10px] font-mono font-black uppercase tracking-[1em]">India_Pure</span>

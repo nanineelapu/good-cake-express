@@ -1,6 +1,7 @@
 "use client";
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { MessageCircle, ArrowRight, Star, ChefHat } from 'lucide-react';
 import { useRef, useState, useEffect } from 'react';
@@ -109,7 +110,7 @@ export default function HeroSection() {
               <motion.button
                 whileHover={{ scale: 1.02, y: -4 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full sm:w-auto bg-primary text-white px-10 py-5 rounded-2xl font-black flex items-center justify-center gap-4 shadow-[0_20px_40px_-5px_rgba(192,24,42,0.3)] group overflow-hidden relative"
+                className="w-full sm:w-auto bg-primary text-white px-10 py-5 rounded-2xl font-black flex items-center justify-center gap-4 shadow-[0_20px_40px_-5px_rgba(192,24,42,0.3)] group overflow-hidden relative transform-gpu"
               >
                 <div className="absolute inset-0 bg-linear-to-r from-white/0 via-white/5 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
                 Order on WhatsApp
@@ -138,8 +139,14 @@ export default function HeroSection() {
           >
             <div className="flex -space-x-3">
               {[1, 2, 3, 4, 5].map((i) => (
-                <div key={i} className="w-9 h-9 rounded-full border-2 border-primary/20 bg-white/10 overflow-hidden">
-                  <img src={`https://i.pravatar.cc/100?img=${i + 20}`} alt="avatar" className="w-full h-full object-cover" />
+                <div key={i} className="w-9 h-9 rounded-full border-2 border-primary/20 bg-white/10 overflow-hidden relative">
+                  <Image 
+                    src={`https://i.pravatar.cc/100?img=${i + 20}`} 
+                    alt="avatar" 
+                    fill 
+                    sizes="36px"
+                    className="object-cover" 
+                  />
                 </div>
               ))}
             </div>
